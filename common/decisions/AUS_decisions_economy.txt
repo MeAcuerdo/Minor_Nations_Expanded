@@ -7,8 +7,10 @@ AUS_economic_policy = {
             owns_state = 153
             controls_state = 153
         }
+        icon = tungsten
         cost = 100
         state_target = yes
+        fixed_random_seed = no
         on_map_mode = decision_view_only
         targets = {
             153
@@ -17,6 +19,22 @@ AUS_economic_policy = {
         fire_only_once = yes
         modifier = {
             consumer_goods_factor = 0.25
+        }
+        remove_effect = {
+            set_country_flag = developed_tyrol
+            add_resource = {
+                type = tungsten
+                amount = 6
+                state = 153
+            }
+            random = {
+                chance = 50
+                add_resource = {
+                    type = chromium
+                    amount = 2
+                    state = 848
+                }
+            }
         }
     }
     AUS_develop_upper_austria = {
@@ -27,10 +45,27 @@ AUS_economic_policy = {
             owns_state = 152
             controls_state = 152
         }
+        icon = generic_construction
+        cost = 100
+        days_remove = 90
         state_target = yes
         on_map_mode = decision_view_only
         targets = {
             152
+        }
+        modifier = {
+            consumer_goods_factor = 0.25
+        }
+        remove_effect = {
+            set_country_flag = developed_upper_austria
+            152 = {
+                add_extra_state_shared_building_slots = 2
+                Add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
     }
     AUS_develop_lower_austria = {
@@ -41,10 +76,62 @@ AUS_economic_policy = {
             owns_state = 4
             controls_state = 4
         }
+        cost = 100
+        days_remove = 90
         state_target = yes
         on_map_mode = decision_view_only
+        fixed_random_seed = no
         targets = {
             4
+        }
+        modifier = {
+            consumer_goods_factor = 0.25
+        }
+        remove_effect = {
+            set_country_flag = developed_lower_austria
+            4 = {
+                Add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+                add_resource = {
+                    type = steel
+                    amount = 20
+                }
+            }
+        }
+    }
+    AUS_continue_development = {
+        allowed = {
+            original_tag = AUS
+        }
+        available = {
+            has_country_flag = developed_tyrol
+            has_country_flag = developed_upper_austria
+            has_country_flag = developed_lower_austria
+        }
+        icon = generic_construction
+        cost = 100
+        days_remove = 90
+        fixed_random_seed = no
+        days_re_enable = 365
+        modifier = {
+            consumer_goods_factor = 0.2
+        }
+        remove_effect = {
+            random_owned_state = {
+                add_extra_state_shared_building_slots = 1
+                random = {
+                    chance = 5
+                    add_extra_state_shared_building_slots = 1
+                    Add_building_construction = {
+                        type = industrial_complex
+                        level = 1
+                        instant_build = yes
+                    }
+                }
+            }
         }
     }
 }

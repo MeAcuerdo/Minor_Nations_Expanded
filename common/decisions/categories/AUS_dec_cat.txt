@@ -36,3 +36,15 @@ AUS_army_expans = {
         base = 3
     }
 }
+
+AUS_economic_policy = {
+    allowed = {
+        original_tag = AUS
+    }
+    visible = {
+        has_completed_focus = AUS_industrial_investments
+    }
+    priority = {
+        base = 2
+    }
+}

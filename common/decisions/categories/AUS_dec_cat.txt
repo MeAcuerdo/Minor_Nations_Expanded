@@ -1,0 +1,38 @@
+AUS_confed_expansion = {
+    allowed = {
+    original_tag = AUS
+    }
+    visible = {
+        has_completed_focus = AUS_proclaim_a_new_age
+    }
+    icon = infiltration
+    priority = {
+        base = 4
+    }
+}
+
+AUS_arms_deals = {
+    allowed = {
+        original_tag = AUS
+    }
+    visible = {
+        has_completed_focus = AUS_war_preparation
+    }
+    icon = generic_political_actions
+    priority = {
+        base = 2
+    }
+}
+
+AUS_army_expans = {
+    allowed = {
+        original_tag = AUS
+    }
+    visible = {
+        has_completed_focus = AUS_expand_the_ministries_of_defense
+    }
+    icon = army_reform
+    priority = {
+        base = 3
+    }
+}

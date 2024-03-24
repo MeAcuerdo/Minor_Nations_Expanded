@@ -1,0 +1,11 @@
+Credits = {
+    visible = {
+        not = {
+            has_country_flag = hide_credits
+        }
+    }
+    icon = military_operation
+    priority = {
+        base = 30
+    }
+}

@@ -1,0 +1,25 @@
+credits = {
+    Mashedd = {
+        available = {
+            has_country_flag = No
+        }
+        icon = generic_army_support
+    }
+    MeAcuerdo = {
+        available = {
+            has_country_flag = No
+        }
+        icon = generic_army_support
+    }
+    Commander120 = {
+        available = {
+            has_country_flag = No
+        }
+        icon = generic_army_support
+    }
+    Hide = {
+        complete_effect = {
+            set_country_flag = hide_credits
+        }
+    }
+}

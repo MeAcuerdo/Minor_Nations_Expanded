@@ -211,28 +211,52 @@ AUS_ground_exercises = {
             }
         }
     }
-AUS_air_exercises = {
-    allowed = {
-        original_tag = AUS
-    }
-    available = {
-        has_war = no
-        has_completed_focus = AUS_salzburg_flightschool
-    }
-    cost = 65
-    days_remove = 30
-    fire_only_once = yes
-    icon = generic_air
-    fixed_random_seed = no
-    complete_effect = {
-        add_fuel = -750
-        random = {
-            chance = 25
-            add_manpower = -200
+    AUS_air_exercises = {
+        allowed = {
+            original_tag = AUS
+        }
+        available = {
+            has_war = no
+            has_completed_focus = AUS_salzburg_flightschool
+        }
+        cost = 65
+        days_remove = 30
+        fire_only_once = yes
+        icon = generic_air
+        fixed_random_seed = no
+        complete_effect = {
+            add_fuel = -750
+            random = {
+                chance = 25
+                add_manpower = -200
+            }
+        }
+        remove_effect = {
+            air_experience = 25
         }
     }
-    remove_effect = {
-        air_experience = 25
-    }
+    AUS_naval_exercises = {
+        allowed = {
+            original_tag = AUS
+        }
+        available = {
+            has_war = no
+            has_completed_focus = AUS_subnautical_expansion
+        }
+        cost = 65
+        days_remove = 30
+        fire_only_once = yes
+        icon = generic_naval
+        fixed_random_seed = no
+        complete_effect = {
+            add_fuel = -750
+            random = {
+                chance = 25
+                add_manpower = -200
+            }
+        }
+        remove_effect = {
+            navy_experience = 25
+        }
     }
 }

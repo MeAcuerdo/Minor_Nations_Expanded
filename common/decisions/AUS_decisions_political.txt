@@ -168,6 +168,7 @@ AUS_confed_expansion = {
         }
         available = {
             has_war = no
+            has_completed_focus = AUS_divided_once_again
             POL = {
                 not = {
                     is_subject_of = AUS
@@ -206,6 +207,8 @@ AUS_confed_expansion = {
             original_tag = AUS
         }
         available = {
+            has_war = no
+            has_completed_focus = AUS_seize_control_over_the_belts
             DEN = {
                 not = {
                     is_subject_of = AUS

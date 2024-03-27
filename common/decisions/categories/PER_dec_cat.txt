@@ -1,0 +1,5 @@
+PER_placeholder = {
+    allowed = {
+        original_tag = PER
+    }
+}

@@ -1,5 +1,8 @@
-PER_placeholder = {
+PER_anglo_soviet_pressure = {
     allowed = {
         original_tag = PER
+    }
+    priority = {
+        base = 10
     }
 }

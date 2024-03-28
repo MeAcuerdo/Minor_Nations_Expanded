@@ -1,6 +1,7 @@
 PER_anglo_soviet_pressure = {
     PER_invasion_threat = {
         is_good = no
+        icon = CHL_carabineros
         war_with_on_timeout = SOV
         war_with_on_timeout = ENG
         days_mission_timeout = 1750

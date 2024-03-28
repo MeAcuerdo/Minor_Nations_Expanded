@@ -2,6 +2,7 @@ PER_anglo_soviet_pressure = {
     allowed = {
         original_tag = PER
     }
+    icon = sov_great_patriotic_war
     priority = {
         base = 10
     }

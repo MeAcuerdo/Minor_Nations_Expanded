@@ -1,0 +1,27 @@
+add_namespace = PER_anglosoviet
+country_event = {
+    id = PER_anglosoviet.1
+    title = PER_anglosoviet.1.t
+    desc = PER_anglosoviet.1.desc
+    option = {
+        name = PER_anglosoviet.1.a
+        add_political_power = -5
+        PER = {
+            country_event = {
+                id = PER_anglosoviet.2
+                days = 17
+            }
+        }
+    }
+}
+country_event = {
+    id = PER_anglosoviet.2
+    title = PER_anglosoviet.2.t
+    desc = PER_anglosoviet.2.desc
+    option = {
+        name = PER_anglosoviet.2.a
+    }
+    option = {
+        name = PER_anglosoviet2.b
+    }
+}

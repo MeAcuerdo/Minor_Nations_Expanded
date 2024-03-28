@@ -3,6 +3,13 @@ on_actions = {
         effect = {
             PER = {
                 set_country_flag = impending_invasion
+                activate_mission = PER_invasion_threat
+            }
+            PER = {
+                country_event = {
+                    id = PER_anglosoviet.1
+                    days = 7
+                }
             }
         }
     }

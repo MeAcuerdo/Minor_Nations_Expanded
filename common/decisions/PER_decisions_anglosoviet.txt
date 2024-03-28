@@ -5,12 +5,14 @@ PER_anglo_soviet_pressure = {
         war_with_on_timeout = SOV
         war_with_on_timeout = ENG
         days_mission_timeout = 1750
+        fire_only_once = yes
         cancel_trigger = {
-            not = {
-                has_country_flag = impending_invasion
-            }
+            has_country_flag = impending_invasion
         }
         timeout_effect = {
+            news_event = {
+                id = PER_anglosoviet.3
+            }
             SOV = {
                 declare_war_on = {
                     target = PER
@@ -25,5 +27,59 @@ PER_anglo_soviet_pressure = {
             }
         }
         priority = 5
+    }
+    PER_SOV_discontent = {
+        allowed = {
+            original_tag = XXX
+        }
+        is_good = yes
+        fire_only_once = yes
+        icon = generic_break_treaty
+        days_mission_timeout = 32
+        complete_effect = {
+            add_days_mission_timeout = {
+                mission = PER_invasion_threat
+                days = -40
+            }
+            news_event = {
+                id = PER_anglosoviet.4
+            }
+            SOV = {
+                news_event = {
+                    id = PER_anglosoviet_external.2
+                    days = 2
+                }
+            }
+            clr_country_flag = sov_deleg
+            set_country_flag = sov_deleg_left
+        }
+        priority = 2
+        cancel_trigger = {
+            not = {
+                has_country_flag = SOV_negotiation_complete
+            }
+        }
+    }
+    PER_SOV_negotiation = {
+        allowed = {
+            original_tag = PER
+        }
+        visible = {
+            has_country_flag = sov_deleg
+        }
+        cost = 15
+        icon = eng_trade_unions_demand
+        days_remove = 10
+        fire_only_once = yes
+        cancel_trigger = {
+            has_country_flag = sov_deleg_left
+        }
+        remove_effect = {
+            add_days_mission_timeout = {
+                mission = PER_invasion_threat
+                days = 45
+            }
+            set_country_flag = SOV_negotiation_complete
+        }
     }
 }

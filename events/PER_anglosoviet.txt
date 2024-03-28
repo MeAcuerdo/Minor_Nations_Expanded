@@ -1,27 +1,76 @@
 add_namespace = PER_anglosoviet
+add_namespace = PER_anglosoviet_external
 country_event = {
     id = PER_anglosoviet.1
     title = PER_anglosoviet.1.t
     desc = PER_anglosoviet.1.desc
+    is_triggered_only = yes
     option = {
         name = PER_anglosoviet.1.a
         add_political_power = -5
+        add_manpower = -100
         PER = {
-            country_event = {
+            news_event = {
                 id = PER_anglosoviet.2
                 days = 17
             }
         }
+        SOV = {
+            news_event = {
+                id= PER_anglosoviet_external.1
+                days = 11
+            }
+        }
     }
 }
-country_event = {
+news_event = {
     id = PER_anglosoviet.2
     title = PER_anglosoviet.2.t
     desc = PER_anglosoviet.2.desc
+    is_triggered_only = yes
+    picture = GFX_news_event_019
     option = {
         name = PER_anglosoviet.2.a
+        PER = {
+            set_country_flag = sov_deleg
+            PER = {
+                activate_mission = PER_SOV_discontent
+            }
+        }
     }
+}
+news_event = {
+    id = PER_anglosoviet.3
+    title = PER_anglosoviet.3.t
+    desc = PER_anglosoviet.3.desc
+    is_triggered_only = yes
+    picture = GFX_news_event_032
     option = {
-        name = PER_anglosoviet2.b
+        name = PER_anglosoviet.3.a
+    }
+}
+news_event = {
+    id = PER_anglosoviet_external.1
+    title = PER_anglosoviet_external.1.t
+    desc = PER_anglosoviet_external.1.desc
+    option = {
+        name= PER_anglosoviet_external.1.a
+        add_political_power = -5
+    }
+}
+news_event = {
+    id = PER_anglosoviet.4
+    title = PER_anglosoviet.4.t
+    desc = PER_anglosoviet.4.desc
+    option = {
+        name = PER_anglosoviet.4.a
+    }
+}
+news_event = {
+    id = PER_anglosoviet_external.2
+    title = PER_anglosoviet_external.2.t
+    desc = PER_anglosoviet_external.2.desc
+    option = {
+        name = PER_anglosoviet_external.2.a
     }
 }

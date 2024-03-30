@@ -2,6 +2,20 @@ PER_anglo_soviet_pressure = {
     allowed = {
         original_tag = PER
     }
+    visible = {
+        not = {
+            has_global_flag = PER_invasion_ongoing
+        }
+        not = {
+            has_country_flag = PER_lost_invasion
+        }
+        not = {
+            has_country_flag = PER_won_invasion
+        }
+        not = {
+            has_global_flag = ahistorical
+        }
+    }
     icon = sov_great_patriotic_war
     priority = {
         base = 10
@@ -14,5 +28,21 @@ PER_invasion_ongoing = {
             add = 10
             tag = PER
         }
+    }
+}
+PER_post_invasion_w = {
+    visible = {
+        has_country_flag = PER_won_invasion
+    }
+    priority = {
+        base = 10
+    }
+}
+PER_post_invasion_l = {
+    visible = {
+        has_country_flag = PER_lost_invasion
+    }
+    priority = {
+        base = 10
     }
 }

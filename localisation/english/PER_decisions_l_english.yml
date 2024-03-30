@@ -11,3 +11,7 @@ sov_deleg_left: " The [SOV.GetFlag]§Y[SOV.GetAdjective]§! delegation has retur
 invisible: " "
 PER_anglosoviet_invasion: "The invasion of [PER.GetNameDef] is ongoing"
 PER_gilan_mines: "Import soviet equipment to mine the north"
+prevent_invasion: "Preventing the invasion via diplomatic means will complete the mission."
+PER_invasion_ongoing: "Ongoing invasion of [PER.GetNameDef]"
+GER_aid_PER: "Send aid to [PER.GetNameDef]"
+scripted_peace: "A scripted peace deal will occure"

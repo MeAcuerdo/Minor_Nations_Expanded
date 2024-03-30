@@ -9,16 +9,18 @@ country_event = {
         name = PER_anglosoviet.1.a
         add_political_power = -5
         add_manpower = -100
-        PER = {
-            news_event = {
-                id = PER_anglosoviet.2
-                days = 17
+        hidden_trigger = {
+            PER = {
+                news_event = {
+                    id = PER_anglosoviet.2
+                    days = 17
+                }
             }
-        }
-        SOV = {
-            news_event = {
-                id= PER_anglosoviet_external.1
-                days = 11
+            SOV = {
+                news_event = {
+                    id= PER_anglosoviet_external.1
+                   days = 11
+                }
             }
         }
     }
@@ -33,6 +35,7 @@ news_event = {
         name = PER_anglosoviet.2.a
         PER = {
             set_country_flag = sov_deleg
+            set_country_flag = sov_deleg_arrived
             PER = {
                 activate_mission = PER_SOV_discontent
             }

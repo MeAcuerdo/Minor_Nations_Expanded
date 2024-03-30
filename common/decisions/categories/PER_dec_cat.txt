@@ -7,3 +7,12 @@ PER_anglo_soviet_pressure = {
         base = 10
     }
 }
+PER_invasion_ongoing = {
+    priority = {
+        base = 5
+        modifier = {
+            add = 10
+            tag = PER
+        }
+    }
+}

@@ -74,3 +74,11 @@ news_event = {
         name = PER_anglosoviet_external.2.a
     }
 }
+country_event = {
+    id = PER_anglosoviet.5
+    title = PER_anglosoviet.5.t
+    desc = PER_anglosoviet.5.desc
+    option = {
+        name = PER_anglosoviet.5.a
+    }
+}

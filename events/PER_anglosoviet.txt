@@ -56,6 +56,7 @@ news_event = {
     id = PER_anglosoviet_external.1
     title = PER_anglosoviet_external.1.t
     desc = PER_anglosoviet_external.1.desc
+    is_triggered_only = yes
     option = {
         name= PER_anglosoviet_external.1.a
         add_political_power = -5
@@ -65,6 +66,7 @@ news_event = {
     id = PER_anglosoviet.4
     title = PER_anglosoviet.4.t
     desc = PER_anglosoviet.4.desc
+    is_triggered_only = yes
     option = {
         name = PER_anglosoviet.4.a
     }
@@ -73,6 +75,7 @@ news_event = {
     id = PER_anglosoviet_external.2
     title = PER_anglosoviet_external.2.t
     desc = PER_anglosoviet_external.2.desc
+    is_triggered_only = yes
     option = {
         name = PER_anglosoviet_external.2.a
     }
@@ -81,7 +84,92 @@ country_event = {
     id = PER_anglosoviet.5
     title = PER_anglosoviet.5.t
     desc = PER_anglosoviet.5.desc
+    is_triggered_only = yes
     option = {
         name = PER_anglosoviet.5.a
+        add_manpower = -300
+        add_political_power = -10
+        set_country_flag = PER_bad_KUR_treatment
+    }
+    option = {
+        name = PER_anglosoviet.5.b
+        add_stability = -0.25
+    }
+}
+country_event = {
+    id = PER_anglosoviet.6
+    title = PER_anglosoviet.6.t
+    desc = PER_anglosoviet.6.desc
+    is_triggered_only = yes
+    option = {
+        name = PER_anglosoviet.6.a
+        custom_effect_tooltip = tooltip.PER_anglosoviet.6.a
+        419 = {
+            set_demilitarized_zone = yes
+        }
+        420 = {
+            set_demilitarized_zone = yes
+        }
+        give_resource_rights = {
+            receiver = ENG
+            state = 412
+        }
+        hidden_trigger = {
+            if = {
+                limit = {
+                    has_country_flag = PER_bad_KUR_treatment
+                }
+                country_event = {
+                    id = PER_anglosoviet.7
+                    days = 30
+                }
+                else = {
+                    country_event = {
+                        id = PER_anglosoviet.7
+                        days = 87
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = PER_high_surrender
+            }
+            416 = {
+                transfer_state_to = SOV
+            }
+            410 = {
+                transfer_state_to = RAJ
+            }
+        }
+    }
+}
+country_event ={
+    id = PER_anglosoviet.7
+    title = PER_anglosoviet.7.t
+    desc = PER_anglosoviet.7.desc
+    is_triggered_only = yes
+    option = {
+        PER_anglosoviet.7.a
+        hidden_trigger = {
+            419 = {
+                set_demilitarized_zone = no
+            }
+        }
+        set_country_flag = KUR_rebellion_PER
+        release_on_controlled = KUR
+        KUR = {
+            load_oob = Kurdistan
+        }
+        declare_war_on = {
+            target = KUR
+            type = annex_everything
+        }
+        419 = {
+            add_claim_by = PER
+        }
+        421 = {
+            add_claim_by = PER
+        }
     }
 }

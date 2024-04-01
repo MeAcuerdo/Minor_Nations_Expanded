@@ -25,13 +25,13 @@ PER_anglo_soviet_pressure = {
             SOV = {
                 declare_war_on = {
                     target = PER
-                    type = puppet
+                    type = puppet_wargoal_focus
                 }
             }
             ENG = {
                 declare_war_on = {
                     target = PER
-                    type = puppet
+                    type = puppet_wargoal_focus
                 }
             }
             set_global_flag = PER_anglosoviet_invasion
@@ -64,7 +64,7 @@ PER_anglo_soviet_pressure = {
             hidden_trigger = {
                 country_event = {
                     id = PER_anglosoviet.5
-                    days = 32
+                    days = 75
                 }
             }
             hidden_trigger = {
@@ -100,9 +100,11 @@ PER_anglo_soviet_pressure = {
                 days = 45
             }
             set_country_flag = SOV_negotiation_complete
-            country_event = {
-                 id = PER_anglosoviet.5
-                 days = 30
+            hidden_trigger = {
+                country_event = {
+                    id = PER_anglosoviet.5
+                    days = 70
+                }
             }
         }
     }
@@ -142,6 +144,9 @@ PER_anglo_soviet_pressure = {
 }
 PER_invasion_ongoing = {
     PER_surrender = {
+        allowed = {
+            original_tag = PER
+        }
         available = {
             has_global_flag = PER_anglosoviet_invasion
             surrender_progress > 0.25
@@ -150,25 +155,129 @@ PER_invasion_ongoing = {
             original_tag = PER
         }
         icon = generic_form_nation
+        fire_only_once = yes
         complete_effect = {
             white_peace = ENG
             white_peace = SOV
-            white_peace = {
-                tag = TAN
-                message = scripted_peace
-            }
+            custom_effect_tooltip = scripted_peace
+            set_country_flag = PER_lost_invasion
+            clr_global_flag = PER_anglosoviet_invasion
             hidden_trigger = {
-                419 = {
-                    set_demilitarized_zone = yes
-                }
-                420 = {
-                    set_demilitarized_zone = yes
-                }
-                give_resource_rights = {
-                    receiver = ENG
-                    state = 412
+                country_event = {
+                    id = PER_anglosoviet.6
+                    days = 7
                 }
             }
+            if = {
+                limit = {
+                    surrender_progress > 0.65
+                }
+                set_country_flag = PER_high_surrender
+            }
+        }
+    }
+    PER_end_the_war = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            hidden_trigger = {
+                has_global_flag = PER_anglosoviet_invasion
+            }
+            surrender_progress < 0.01
+            controls_state = 238
+            controls_state = 237
+            controls_state = 235
+            controls_state = 232
+            controls_state = 827
+            controls_state = 231
+            controls_state = 828
+            controls_state = 821
+            controls_state = 229
+            controls_state = 230
+        }
+        on_map_mode = decision_view_only
+        highlight_states = {
+            highlight_state_targets = {
+                state = 238
+                state = 237
+                state = 235
+                state = 232
+                state = 827
+                state = 231
+                state = 828
+                state = 229
+                state = 230
+                state = 821
+            }
+        }
+        cancel_trigger = {
+            hidden_trigger = {
+                not = {
+                    controls_state = 238
+                }
+                not = {
+                    controls_state = 237
+                }
+            }
+        }
+        cost = 15
+        days_remove = 14
+        fire_only_once = yes
+        icon = eng_trade_unions_demand
+        remove_effect = {
+            white_peace = ENG
+            white_peace = SOV
+            if = {
+                limit = {
+                    has_country_flag = PER_claimed_s_caucasus
+                }
+                230 = {
+                    transfer_state_to = PER
+                }
+                229 = {
+                    transfer_state_to = PER
+                }
+            }
+            else = {
+                custom_effect_tooltip = obtain_claimed_states
+            }
+            set_country_flag = PER_won_invasion
+            custom_effect_tooltip = cancel_if_requirements_not_met_dec
+        }
+    }
+    PER_claim_southern_caucasus = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            hidden_trigger = {
+                has_global_flag = PER_anglosoviet_invasion
+            }
+            controls_state = 230
+            controls_state = 229
+        }
+        highlight_states = {
+            highlight_state_targets = {
+                state = 230
+                state = 229
+            }
+        }
+        on_map_mode = decision_view_only
+        cost = 15
+        days_remove = 60
+        fire_only_once = yes
+        modifier = {
+            political_power_cost = 0.2
+        }
+        remove_effect = {
+            230 = {
+                add_claim_by = PER
+            }
+            229 = {
+                add_claim_by = PER
+            }
+            set_country_flag = PER_claimed_s_caucasus
         }
     }
     GER_aid_PER = {

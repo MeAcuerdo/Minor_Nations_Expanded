@@ -22,6 +22,7 @@ PER_anglo_soviet_pressure = {
     }
 }
 PER_invasion_ongoing = {
+    icon = SOV_civil_war
     priority = {
         base = 5
         modifier = {

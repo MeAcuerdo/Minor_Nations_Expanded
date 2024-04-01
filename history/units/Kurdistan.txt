@@ -1,0 +1,79 @@
+division_template = {
+    name = "Kurdish Rebel infantry"
+    is_locked = yes
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 1 y = 2 }
+    }
+}
+division_template = {
+    name = "Kurdish Rebel cavalry"
+    is_locked = yes
+    regiments = {
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 0 y = 0 }
+        cavalry = { x = 1 y = 1 }
+    }
+}
+
+units = {
+    division = {
+        name = "1st Kurdish Rebbel division"
+        location = 9816
+        division_template = "Kurdish Rebel infantry"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.7
+    }
+    division = {
+        name = "2nd Kurdish Rebbel division"
+        location = 12793
+        division_template = "Kurdish Rebel infantry"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.7
+    }
+    division = {
+        name = "3rd Kurdish Rebbel division"
+        location = 5050
+        division_template = "Kurdish Rebel infantry"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.7
+    }
+    division = {
+        name = "4th Kurdish Rebbel division"
+        location = 12773
+        division_template = "Kurdish Rebel infantry"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.7
+    }
+    division = {
+        name = "5th Kurdish Rebbel division"
+        location = 2071
+        division_template = "Kurdish Rebel cavalry"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.7
+    }
+    division = {
+        name = "6th Kurdish Rebbel division"
+        location = 10774
+        division_template = "Kurdish Rebel cavalry"
+        start_experience_factor = 0.2
+        start_equipment_factor = 0.7
+    }
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "KUR"
+		}
+		requested_factories = 1
+		progress = 0.19
+		efficiency = 100
+	}
+}

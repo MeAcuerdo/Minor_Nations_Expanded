@@ -264,6 +264,7 @@ PER_invasion_ongoing = {
             }
         }
         on_map_mode = decision_view_only
+        icon = infiltrate_state
         cost = 15
         days_remove = 60
         fire_only_once = yes

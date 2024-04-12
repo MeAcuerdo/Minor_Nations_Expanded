@@ -27,7 +27,7 @@ units = {
     division = {
         name = "3rd militia"
         location = 7969
-        division_template = "Infantry Division"
+        division_template = "Persian militia"
         start_experience_factor = 0.1
         start_equipment_factor = 0.8
     }

@@ -22,7 +22,7 @@ PER_anglo_soviet_pressure = {
     }
 }
 PER_invasion_ongoing = {
-    icon = SOV_civil_war
+    icon = generic_mountain_fortification
     priority = {
         base = 5
         modifier = {
@@ -32,18 +32,20 @@ PER_invasion_ongoing = {
     }
 }
 PER_post_invasion_w = {
+    icon = CHL_nacista_decisions
     visible = {
         has_country_flag = PER_won_invasion
     }
     priority = {
-        base = 10
+        base = 8
     }
 }
 PER_post_invasion_l = {
+    icon = CHL_hispanic_unity_decisions
     visible = {
         has_country_flag = PER_lost_invasion
     }
     priority = {
-        base = 10
+        base = 8
     }
 }

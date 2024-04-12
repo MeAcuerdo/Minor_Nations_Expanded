@@ -142,6 +142,7 @@ PER_anglo_soviet_pressure = {
         }
     }
 }
+
 PER_invasion_ongoing = {
     PER_surrender = {
         allowed = {
@@ -195,6 +196,7 @@ PER_invasion_ongoing = {
             controls_state = 821
             controls_state = 229
             controls_state = 230
+            controls_state = 826
         }
         on_map_mode = decision_view_only
         highlight_states = {
@@ -209,6 +211,7 @@ PER_invasion_ongoing = {
                 state = 229
                 state = 230
                 state = 821
+                state = 826
             }
         }
         cancel_trigger = {
@@ -228,6 +231,12 @@ PER_invasion_ongoing = {
         remove_effect = {
             white_peace = ENG
             white_peace = SOV
+            if = {
+                limit = {
+                    has_country_flag = GEO_independence
+                }
+                release_on_controlled = GEO
+            }
             if = {
                 limit = {
                     has_country_flag = PER_claimed_s_caucasus
@@ -281,6 +290,24 @@ PER_invasion_ongoing = {
             set_country_flag = PER_claimed_s_caucasus
         }
     }
+    PER_support_GEO_independence = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            controls_state = 231
+            GEO = {
+                exists = no
+            }
+        }
+        cost = 25
+        fire_only_once = yes
+        icon = CHL_nacista_coup_attempt
+        days_remove = 15
+        remove_effect = {
+            set_country_flag = GEO_independence
+        }
+    }
     GER_aid_PER = {
         available = {
             has_global_flag = PER_anglosoviet_invasion
@@ -289,13 +316,37 @@ PER_invasion_ongoing = {
             original_tag = GER
         }
         cost = 15
+        days_remove = 5
+        fire_only_once = yes
+        icon = eng_trade_unions_support
+        complete_effect = {
+            set_country_flag = GER_aided_PER
+            PER = {
+                add_equipment_to_stockpile = {
+                    type = infantry_equipment
+                    amount = 650
+                    producer = GER
+                }
+            }
+        }
+    }
+    GER_aid_PER_2 = {
+        available = {
+            has_global_flag = PER_anglosoviet_invasion
+        }
+        visible = {
+            original_tag = GER
+            has_country_flag = GER_aided_PER
+        }
+        cost = 35
+        days_remove = 5
         fire_only_once = yes
         icon = eng_trade_unions_support
         complete_effect = {
             PER = {
                 add_equipment_to_stockpile = {
                     type = infantry_equipment
-                    amount = 650
+                    amount = 1500
                     producer = GER
                 }
             }

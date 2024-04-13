@@ -63,7 +63,7 @@ news_event = { #Preparing the delegation
         add_political_power = -5
     }
 }
-news_event = {
+news_event = { #Negotiation breakdown
     id = PER_anglosoviet.4
     title = PER_anglosoviet.4.t
     desc = PER_anglosoviet.4.desc
@@ -72,7 +72,7 @@ news_event = {
         name = PER_anglosoviet.4.a
     }
 }
-news_event = {
+news_event = { #Negotiation breakdown SOV
     id = PER_anglosoviet_external.2
     title = PER_anglosoviet_external.2.t
     desc = PER_anglosoviet_external.2.desc
@@ -97,7 +97,7 @@ country_event = { #Problems in KUR
         add_stability = -0.25
     }
 }
-country_event = { #KUR rebellion
+country_event = { #Surrender deal
     id = PER_anglosoviet.6
     title = PER_anglosoviet.6.t
     desc = PER_anglosoviet.6.desc
@@ -145,7 +145,7 @@ country_event = { #KUR rebellion
         }
     }
 }
-country_event ={
+country_event ={ #KUR Rebellion
     id = PER_anglosoviet.7
     title = PER_anglosoviet.7.t
     desc = PER_anglosoviet.7.desc

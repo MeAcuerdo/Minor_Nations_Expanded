@@ -1,0 +1,12 @@
+add_namespace = country_liberation
+
+news_event = { #Babylon liberation
+    id = country_liberation.1
+    title = country_liberation.1.t
+    desc = country_liberation.1.desc
+    picture = GFX_news_event_050
+    is_triggered_only = yes
+    option = {
+        name = country_liberation.1.a
+    }
+}

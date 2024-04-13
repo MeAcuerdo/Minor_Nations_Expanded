@@ -131,9 +131,20 @@ PER_post_invasion_w = {
             political_power_cost = 0.05
         }
         remove_effect = {
-            puppet = {
-                target = GEO
-                end_wars = no
+            if = {
+                limit = {
+                    has_dlc = "Together for Victory"
+                }
+                set_autononomy = {
+                    target = GEO
+                    autonomous_state = autonomy_integrated_puppet
+                }
+                else = {
+                    puppet = {
+                        target = GEO
+                        end_wars = no
+                    }
+                }
             }
         }
     }

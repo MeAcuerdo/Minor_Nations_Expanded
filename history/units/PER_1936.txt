@@ -63,7 +63,7 @@ instant_effect = {
 			creator = "PER"
 		}
 		requested_factories = 1
-		progress = 0.31
+		progress = 0.35
 		efficiency = 100
 	}
 }

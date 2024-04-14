@@ -21,4 +21,38 @@ on_actions = {
             }
         }
     }
+    on_peaceconference_ended = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        original_tag = PER
+                    }
+                    FROM = {
+                        original_tag = KUR
+                    }
+                }
+                PER = {
+                    clr_country_flag = KUR_rebellion_PER
+                }
+            }
+        }
+    }
+    on_release_as_free = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        tag = BAB
+                    }
+                    every_country = {
+                        news_event = {
+                            id = country_liberation.1
+                            days = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

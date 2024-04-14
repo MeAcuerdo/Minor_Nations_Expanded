@@ -10,7 +10,7 @@ country_event = { #Soviet influence
         name = PER_anglosoviet.1.a
         add_political_power = -5
         add_manpower = -100
-        hidden_trigger = {
+        hidden_effect = {
             PER = {
                 news_event = {
                     id = PER_anglosoviet.2
@@ -115,7 +115,7 @@ country_event = { #Surrender deal
             receiver = ENG
             state = 412
         }
-        hidden_trigger = {
+        hidden_effect = {
             if = {
                 limit = {
                     has_country_flag = PER_bad_KUR_treatment
@@ -152,7 +152,7 @@ country_event ={ #KUR Rebellion
     is_triggered_only = yes
     option = {
         PER_anglosoviet.7.a
-        hidden_trigger = {
+        hidden_effect = {
             419 = {
                 set_demilitarized_zone = no
             }
@@ -172,5 +172,6 @@ country_event ={ #KUR Rebellion
         421 = {
             add_claim_by = PER
         }
+        activate_mission = PER_KUR_revolt
     }
 }

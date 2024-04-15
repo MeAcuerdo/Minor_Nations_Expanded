@@ -4,7 +4,7 @@ PER_anglo_soviet_pressure = {
     }
     visible = {
         not = {
-            has_global_flag = PER_invasion_ongoing
+            has_global_flag = PER_anglosoviet_invasion
         }
         not = {
             has_country_flag = PER_lost_invasion
@@ -22,6 +22,9 @@ PER_anglo_soviet_pressure = {
     }
 }
 PER_invasion_ongoing = {
+    visible = {
+        has_global_flag = PER_anglosoviet_invasion
+    }
     icon = generic_mountain_fortification
     priority = {
         base = 5

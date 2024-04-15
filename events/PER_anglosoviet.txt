@@ -1,6 +1,7 @@
 add_namespace = PER_anglosoviet
 add_namespace = PER_anglosoviet_external
 
+
 country_event = { #Soviet influence
     id = PER_anglosoviet.1
     title = PER_anglosoviet.1.t
@@ -26,6 +27,7 @@ country_event = { #Soviet influence
         }
     }
 }
+
 news_event = { #Arrival SOV delegation
     id = PER_anglosoviet.2
     title = PER_anglosoviet.2.t
@@ -43,6 +45,7 @@ news_event = { #Arrival SOV delegation
         }
     }
 }
+
 news_event = { #War declaration
     id = PER_anglosoviet.3
     title = PER_anglosoviet.3.t
@@ -53,6 +56,7 @@ news_event = { #War declaration
         name = PER_anglosoviet.3.a
     }
 }
+
 news_event = { #Preparing the delegation
     id = PER_anglosoviet_external.1
     title = PER_anglosoviet_external.1.t
@@ -63,6 +67,7 @@ news_event = { #Preparing the delegation
         add_political_power = -5
     }
 }
+
 news_event = { #Negotiation breakdown
     id = PER_anglosoviet.4
     title = PER_anglosoviet.4.t
@@ -72,6 +77,7 @@ news_event = { #Negotiation breakdown
         name = PER_anglosoviet.4.a
     }
 }
+
 news_event = { #Negotiation breakdown SOV
     id = PER_anglosoviet_external.2
     title = PER_anglosoviet_external.2.t
@@ -81,6 +87,7 @@ news_event = { #Negotiation breakdown SOV
         name = PER_anglosoviet_external.2.a
     }
 }
+
 country_event = { #Problems in KUR
     id = PER_anglosoviet.5
     title = PER_anglosoviet.5.t
@@ -97,6 +104,7 @@ country_event = { #Problems in KUR
         add_stability = -0.25
     }
 }
+
 country_event = { #Surrender deal
     id = PER_anglosoviet.6
     title = PER_anglosoviet.6.t
@@ -132,19 +140,22 @@ country_event = { #Surrender deal
                 }
             }
         }
-        if = {
-            limit = {
-                has_country_flag = PER_high_surrender
-            }
-            416 = {
-                transfer_state_to = SOV
-            }
-            410 = {
-                transfer_state_to = RAJ
+        hidden_effect = {
+            if = {
+                limit = {
+                    has_country_flag = PER_high_surrender
+                }
+                416 = {
+                   transfer_state_to = SOV
+                }
+                410 = {
+                    transfer_state_to = RAJ
+                }
             }
         }
     }
 }
+
 country_event ={ #KUR Rebellion
     id = PER_anglosoviet.7
     title = PER_anglosoviet.7.t
@@ -156,21 +167,21 @@ country_event ={ #KUR Rebellion
             419 = {
                 set_demilitarized_zone = no
             }
-        }
-        set_country_flag = KUR_rebellion_PER
-        release_on_controlled = KUR
-        KUR = {
-            load_oob = Kurdistan
-        }
-        declare_war_on = {
-            target = KUR
-            type = annex_everything
-        }
-        419 = {
-            add_claim_by = PER
-        }
-        421 = {
-            add_claim_by = PER
+            set_country_flag = KUR_rebellion_PER
+            release_on_controlled = KUR
+            KUR = {
+                load_oob = Kurdistan
+            }
+            declare_war_on = {
+                target = KUR
+                type = annex_everything
+            }
+            419 = {
+                add_claim_by = PER
+            }
+            421 = {
+                add_claim_by = PER
+            }
         }
         activate_mission = PER_KUR_revolt
     }

@@ -45,6 +45,14 @@ on_actions = {
                     ROOT = {
                         tag = BAB
                     }
+                    set_province_name = {
+                        id = 2097
+                        name = Babylon
+                    }
+                    set_state_name = {
+                        id = 291
+                        name = Babylon
+                    }
                     every_country = {
                         news_event = {
                             id = country_liberation.1

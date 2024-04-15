@@ -156,6 +156,7 @@ PER_post_invasion_w = {
             has_country_flag = PER_recovered
             IRQ = {
                 is_subject = no
+                is_owner_neighbor_of = PER
             }
         }
         icon = generic_army_support

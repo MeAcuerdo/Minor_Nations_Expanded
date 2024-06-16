@@ -4,19 +4,28 @@ PER_anglosoviet.1.desc: "A recent investigation into our public institutions has
 PER_anglosoviet.1.a: "The [SOV.GetAdjective] will answer for this"
 
 PER_anglosoviet.2.t: "The [SOV.GetAdjective] delegation arrives in Tehran."
+PER_anglosoviet.2.desc: "After leaving Moscow yesterday the [SOV.GetAdjective] diplomatic delegation has arrived in Tehran. "
+PER_anglosoviet.2.a: "Welcome!"
 
 PER_anglosoviet.3.t: "Invasion of [PER.GetNameDef]"
 PER_anglosoviet.3.desc: "In a strange turn of events, the [ENG.GetAdjective] and the [SOV.GetAdjective] armed forces have invaded [PER.GetNameDef]. This comes as a surprise for many, as these nations currently advocate for peace in Europe.\nWhile adressing the public earlier today, [PER.GetLeader] said: the [PER.GetAdjective] people sould not fear the invader, as the armed forces will do their best at dealing with them. [PER.GetLeader.GetSheHeCap] also promised a quick resolution to the conflict."
 PER_anglosoviet.3.a: "Oh, the irony"
 
 PER_anglosoviet.4.t: "Negotiations break down."
+PER_anglosoviet.4.desc: "Earlier today the [SOV.GetAdjective] diplomatic delegation left Tehran. The reason for this sudden development seems to be the [PER.GetAdjective] inefficiency to start negotiations. Attempts by [PER.GetLeader] to get them to stay were not sucessful. Analysts believe that this development will have a negative impact on the stability in the region."
+PER_anglosoviet.4.a: "Not optimal"
 
-PER_anglosoviet.5.t: "The [KUR.GetAdjective] request more freedom."
-
-PER_anglosoviet.6.t: "The terms of the peace deal have arrived."
-
-PER_anglosoviet.7.t: "The [KUR.GetNonIdeologyAdjective] revolt!"
+PER_anglosoviet.5.t: "The terms of the peace deal have arrived."
 
 PER_anglosoviet_external.1.t: "A delegation leaves for [PER.GetNameDef]."
 
 PER_anglosoviet_external.2.t: "Negotiations in [PER.GetNameDef] break down."
+
+
+PER_KUR_relations.1.t: "The [KUR.GetAdjective] people request more freedom."
+PER_KUR_relations.1.desc: "A letter arrived in our offices yesterday. The senders claim to be high ranking members of [KUR.GetAdjective] society, and they demand an increase in freedom for their people.\nThe ministers recomend making our point stand. Either we crack down on them or we give in to their demands. No inbetween."
+PER_KUR_relations.1.a: "Send in the army"
+PER_KUR_relations.1.b: "We have better things to deal with"
+
+
+PER_KUR_relations.1.t: "The [KUR.GetNonIdeologyAdjective] revolt!"

@@ -1,0 +1,45 @@
+division_template = {
+    name = "Kurdish militia"
+    is_locked = yes
+    template_counter = 3
+    regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 1 y = 1 }
+    }
+    support = {
+        artillery = { x = 0 y = 0 }
+    }
+}
+
+units = {
+    division = {
+        name = "1st Kurdish militia"
+        location = 12861
+        division_template = "Kurdish militia"
+        start_experience_factor = 0.1
+        start_equipment_factor = 0.8
+    }
+    division = {
+        name = "2nd Kurdish militia"
+        location = 10523
+        division_template = "Kurdish militia"
+        start_experience_factor = 0.1
+        start_equipment_factor = 0.8
+    }
+    division = {
+        name = "3rd Kurdish militia"
+        location = 5098
+        division_template = "Kurdish militia"
+        start_experience_factor = 0.1
+        start_equipment_factor = 0.8
+    }
+    division = {
+        name = "4th Kurdish militia"
+        location = 8040
+        division_template = "Kurdish militia"
+        start_experience_factor = 0.1
+        start_equipment_factor = 0.8
+    }
+}

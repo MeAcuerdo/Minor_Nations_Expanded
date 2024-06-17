@@ -3,6 +3,8 @@ add_namespace = PER_anglosoviet_external
 add_namespace = PER_KUR_relations
 
 
+# Road to war
+
 country_event = { #Soviet influence
     id = PER_anglosoviet.1
     title = PER_anglosoviet.1.t
@@ -44,6 +46,12 @@ news_event = { #Arrival SOV delegation
                 activate_mission = PER_SOV_discontent
             }
         }
+        hidden_effect = {
+            country_event = {
+                id = PER_KUR_relations.1
+                days = 110
+            }
+        }
     }
 }
 
@@ -55,17 +63,19 @@ news_event = { #War declaration
     picture = GFX_news_event_032
     option = {
         name = PER_anglosoviet.3.a
-    }
-}
-
-news_event = { #Preparing the delegation
-    id = PER_anglosoviet_external.1
-    title = PER_anglosoviet_external.1.t
-    desc = PER_anglosoviet_external.1.desc
-    is_triggered_only = yes
-    option = {
-        name= PER_anglosoviet_external.1.a
-        add_political_power = -5
+        hidden_trigger = {
+            if = {
+                limit = {
+                    not = {
+                        has_country_flag = PER_bad_KUR_treatment
+                    }
+                }
+                country_event = {
+                    id = PER_KUR_relations.3
+                    days = 7
+                }
+            }
+        }
     }
 }
 
@@ -76,6 +86,85 @@ news_event = { #Negotiation breakdown
     is_triggered_only = yes
     option = {
         name = PER_anglosoviet.4.a
+    }
+}
+
+country_event = { #Surrender deal
+    id = PER_anglosoviet.5
+    title = PER_anglosoviet.5.t
+    desc = PER_anglosoviet.5.desc
+    is_triggered_only = yes
+    option = {
+        name = PER_anglosoviet.5.a
+        custom_effect_tooltip = tooltip.PER_anglosoviet.5.a
+        419 = {
+            set_demilitarized_zone = yes
+        }
+        420 = {
+            set_demilitarized_zone = yes
+        }
+        give_resource_rights = {
+            receiver = ENG
+            state = 412
+        }
+        delete_unit_template_and_units = {
+            division_template = "Kurdish militia"
+            disband = yes
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    has_country_flag = PER_bad_KUR_treatment
+                }
+                country_event = {
+                    id = PER_KUR_relations.2
+                    days = 30
+                }
+                else = {
+                    country_event = {
+                        id = PER_KUR_relations.2
+                        days = 87
+                    }
+                }
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    has_country_flag = PER_high_surrender
+                }
+                416 = {
+                   transfer_state_to = SOV
+                }
+                410 = {
+                    transfer_state_to = RAJ
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = PER_anglosoviet.6
+    title = PER_anglosoviet.6.t
+    desc = PER_anglosoviet.6.desc
+    is_triggered_only = yes
+    option = {
+        name = PER_anglosoviet.6.a
+    }
+}
+
+
+# External
+
+news_event = { #Preparing the delegation
+    id = PER_anglosoviet_external.1
+    title = PER_anglosoviet_external.1.t
+    desc = PER_anglosoviet_external.1.desc
+    is_triggered_only = yes
+    option = {
+        name = PER_anglosoviet_external.1.a
+        add_political_power = -5
     }
 }
 
@@ -92,6 +181,9 @@ news_event = { #Negotiation breakdown SOV
         }
     }
 }
+
+
+# Kurdistan
 
 country_event = { #Problems in KUR
     id = PER_KUR_relations.1
@@ -187,57 +279,6 @@ country_event = { #Problems in KUR
     }
 }
 
-country_event = { #Surrender deal
-    id = PER_anglosoviet.5
-    title = PER_anglosoviet.5.t
-    desc = PER_anglosoviet.5.desc
-    is_triggered_only = yes
-    option = {
-        name = PER_anglosoviet.5.a
-        custom_effect_tooltip = tooltip.PER_anglosoviet.5.a
-        419 = {
-            set_demilitarized_zone = yes
-        }
-        420 = {
-            set_demilitarized_zone = yes
-        }
-        give_resource_rights = {
-            receiver = ENG
-            state = 412
-        }
-        hidden_effect = {
-            if = {
-                limit = {
-                    has_country_flag = PER_bad_KUR_treatment
-                }
-                country_event = {
-                    id = PER_KUR_relations.2
-                    days = 30
-                }
-                else = {
-                    country_event = {
-                        id = PER_KUR_relations.2
-                        days = 87
-                    }
-                }
-            }
-        }
-        hidden_effect = {
-            if = {
-                limit = {
-                    has_country_flag = PER_high_surrender
-                }
-                416 = {
-                   transfer_state_to = SOV
-                }
-                410 = {
-                    transfer_state_to = RAJ
-                }
-            }
-        }
-    }
-}
-
 news_event ={ #KUR Rebellion
     id = PER_KUR_relations.2
     title = PER_KUR_relations.2.t
@@ -267,5 +308,28 @@ news_event ={ #KUR Rebellion
             }
         }
         activate_mission = PER_KUR_revolt
+    }
+}
+
+country_event = { #Kurdish militias
+    id = PER_KUR_relations.3
+    title = PER_KUR_relations.3.t
+    desc = PER_KUR_relations.3.desc
+    is_triggered_only = yes
+    option = {
+        name = PER_KUR_relations.3.a
+        hidden_effect = {
+            load_oob = PER_kurdish_militia
+        }
+        custom_effect_tooltip = tooltip_PER_KUR_relations.3.a
+        add_stability = -0.03
+    }
+    option = {
+        name = PER_KUR_relations.3.b
+        add_manpower = 3000
+        add_stability = -0.02
+    }
+    option = {
+        name = PER_KUR_relations.3.c
     }
 }

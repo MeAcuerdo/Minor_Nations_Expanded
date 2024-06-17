@@ -30,5 +30,11 @@ PER_KUR_relations.1.desc: "A letter arrived in our offices yesterday. The sender
 PER_KUR_relations.1.a: "Send in the army"
 PER_KUR_relations.1.b: "We have better things to deal with"
 
+PER_KUR_relations.2.t: "The [KUR.GetNonIdeologyAdjective] revolt!"
 
-PER_KUR_relations.1.t: "The [KUR.GetNonIdeologyAdjective] revolt!"
+PER_KUR_relations.3.t: "The question of [KUR.GetNonIdeologyAdjective] recruting"
+PER_KUR_relations.3.desc: "Now that war has broken out our generals see recruting as a necessity. Some ministers warn about a possible negative reaction by the [KUR.GetAdjective] people."
+PER_KUR_relations.3.a: "Forcefully conscript them"
+tooltip_PER_KUR_relations.3.a: "We will get 4 kurdish divisions"
+PER_KUR_relations.3.b: "Allow them to volunteer"
+PER_KUR_relations.3.c: "We won't get involved in the region"

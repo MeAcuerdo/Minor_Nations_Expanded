@@ -104,12 +104,6 @@ PER_anglo_soviet_pressure = {
                 days = 45
             }
             set_country_flag = SOV_negotiation_complete
-            hidden_effect = {
-                country_event = {
-                    id = PER_KUR_relations.1
-                    days = 70
-                }
-            }
         }
     }
 

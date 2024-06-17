@@ -18,7 +18,7 @@ state={
 			7990 1 
 		}
 		add_core_of = PER
-		add_claim_of = SAB
+		add_core_of = SAB
 	}
 
 	provinces={

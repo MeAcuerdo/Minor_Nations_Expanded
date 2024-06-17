@@ -25,6 +25,7 @@ PER_claim_southern_caucasus: "Claim territories south of the Caucasus"
 cancel_if_requirements_not_met_dec: " \nThis decision will cancel if the requirements are not met"
 obtain_claimed_states: "We will obtain any states claimed via decisions"
 PER_support_GEO_independence: "Support claims for [GEO.GetAdjective] independence"
+PER_con_brit: "Concessions to the British"
 
 PER_post_invasion_w: "Economical recovery"
 PER_post_invasion_w_desc: "We may have won the war, but our country has suffered enough. It is time to focus on our recovery and on establishing a sphere of influence."

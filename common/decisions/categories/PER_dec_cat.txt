@@ -21,6 +21,7 @@ PER_anglo_soviet_pressure = {
         base = 10
     }
 }
+
 PER_invasion_ongoing = {
     visible = {
         has_global_flag = PER_anglosoviet_invasion
@@ -34,6 +35,7 @@ PER_invasion_ongoing = {
         }
     }
 }
+
 PER_post_invasion_w = {
     icon = CHL_nacista_decisions
     visible = {
@@ -43,6 +45,7 @@ PER_post_invasion_w = {
         base = 8
     }
 }
+
 PER_post_invasion_l = {
     icon = CHL_hispanic_unity_decisions
     visible = {

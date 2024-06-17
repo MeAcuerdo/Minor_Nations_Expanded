@@ -1,9 +1,23 @@
 debug_decisions = {
     PER_initiate_invasion = {
+        available = {
+            original_tag = PER
+        }
         complete_effect = {
             add_days_mission_timeout = {
                 mission = PER_invasion_threat
                 days = -1745
+            }
+        }
+    }
+    PER_no_invasion = {
+        available = {
+            original_tag = PER
+        }
+        complete_effect = {
+            set_variable = {
+                var = no_invasion
+                value = 2790
             }
         }
     }

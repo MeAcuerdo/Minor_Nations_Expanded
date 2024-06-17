@@ -16,6 +16,9 @@ PER_anglosoviet.4.desc: "Earlier today the [SOV.GetAdjective] diplomatic delegat
 PER_anglosoviet.4.a: "Not optimal"
 
 PER_anglosoviet.5.t: "The terms of the peace deal have arrived."
+PER_anglosoviet.5.desc: "Placeholder"
+PER_anglosoviet.5.a: "We have no other option"
+
 
 PER_anglosoviet_external.1.t: "A delegation leaves for [PER.GetNameDef]."
 

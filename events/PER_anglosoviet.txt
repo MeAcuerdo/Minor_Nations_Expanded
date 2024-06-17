@@ -86,6 +86,10 @@ news_event = { #Negotiation breakdown SOV
     is_triggered_only = yes
     option = {
         name = PER_anglosoviet_external.2.a
+        add_opinion_modifier = {
+            target = PER
+            modifier = negotiation_breakdown
+        }
     }
 }
 
@@ -190,7 +194,7 @@ country_event = { #Surrender deal
     is_triggered_only = yes
     option = {
         name = PER_anglosoviet.5.a
-        custom_effect_tooltip = tooltip.PER_anglosoviet.6.a
+        custom_effect_tooltip = tooltip.PER_anglosoviet.5.a
         419 = {
             set_demilitarized_zone = yes
         }

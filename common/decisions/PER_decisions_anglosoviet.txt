@@ -1,3 +1,5 @@
+# Prewar
+
 PER_anglo_soviet_pressure = {
     PER_invasion_threat = {
         is_good = no
@@ -38,6 +40,7 @@ PER_anglo_soviet_pressure = {
         }
         priority = 15
     }
+
     PER_SOV_discontent = {
         allowed = {
             original_tag = XXX
@@ -80,6 +83,7 @@ PER_anglo_soviet_pressure = {
         }
         priority = 2
     }
+
     PER_SOV_negotiation = {
         allowed = {
             original_tag = PER
@@ -108,6 +112,7 @@ PER_anglo_soviet_pressure = {
             }
         }
     }
+
     PER_gilan_mines = {
         allowed = {
             original_tag = PER
@@ -143,6 +148,9 @@ PER_anglo_soviet_pressure = {
     }
 }
 
+
+# Wartime
+
 PER_invasion_ongoing = {
     PER_surrender = {
         allowed = {
@@ -177,12 +185,13 @@ PER_invasion_ongoing = {
             }
         }
     }
+
     PER_end_the_war = {
         allowed = {
             original_tag = PER
         }
         available = {
-            hidden_effect = {
+            hidden_trigger = {
                 has_global_flag = PER_anglosoviet_invasion
             }
             surrender_progress < 0.01
@@ -282,6 +291,7 @@ PER_invasion_ongoing = {
             custom_effect_tooltip = cancel_if_requirements_not_met_dec
         }
     }
+
     PER_claim_southern_caucasus = {
         allowed = {
             original_tag = PER
@@ -317,6 +327,7 @@ PER_invasion_ongoing = {
             set_country_flag = PER_claimed_s_caucasus
         }
     }
+
     PER_support_GEO_independence = {
         allowed = {
             original_tag = PER
@@ -335,6 +346,7 @@ PER_invasion_ongoing = {
             set_country_flag = GEO_independence
         }
     }
+
     GER_aid_PER = {
         available = {
             has_global_flag = PER_anglosoviet_invasion
@@ -357,6 +369,7 @@ PER_invasion_ongoing = {
             }
         }
     }
+
     GER_aid_PER_2 = {
         available = {
             has_global_flag = PER_anglosoviet_invasion
@@ -366,7 +379,7 @@ PER_invasion_ongoing = {
             has_country_flag = GER_aided_PER
         }
         cost = 35
-        days_remove = 5
+        days_remove = 10
         fire_only_once = yes
         icon = eng_trade_unions_support
         complete_effect = {

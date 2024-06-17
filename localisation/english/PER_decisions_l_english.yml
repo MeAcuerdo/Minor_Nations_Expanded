@@ -36,5 +36,10 @@ PER_ride_waves_of_victory: "Ride the waves of victory"
 PER_recovered: "Recovered from the war"
 
 PER_post_invasion_l: "Recovering our pride"
-PER_post_invasion_l_desc: "We can not allow our legacy to be this. We can not allow defeat to establish a new social orer in our homeland."
+PER_post_invasion_l_desc: "We can not allow our legacy to be this. We can not allow defeat to establish a new social order in our homeland."
 PER_KUR_revolt: "The [KUR.GetAdjective] revolt!"
+KUR_surrender: "[KUR.GetName] surrenders"
+
+decision_cost_CP_25: "£command_power  §Y25§!"
+decision_cost_CP_25_blocked: "£command_power  §R25§!"
+decision_cost_CP_25_tooltip: "It costs £command_power  §Y25§! to take the decision"

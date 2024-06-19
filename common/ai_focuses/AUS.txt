@@ -1,0 +1,23 @@
+
+ai_historical_focus_list_AUS = {
+	ai_national_focuses = {
+	 AUS_industrial_investments
+	 AUS_stabilize_the_politics
+	 AUS_rehabilitation
+	 AUS_go_with_the_flow
+	 AUS_maintain_neutrality
+	 AUS_juliabkommen
+	 AUS_economic_reforms
+	 AUS_modernize_the_highlands
+	 AUS_refortification
+	 AUS_expand_tyrol
+	 AUS_expand_upper_austria
+	 AUS_protect_east_border
+	 AUS_remilitarization
+	 AUS_war_preperation
+	 AUS_balanced_research
+	 AUS_production_project
+	 AUS_starter_armament
+	 AUS_austrian_autarky
+	}
+}

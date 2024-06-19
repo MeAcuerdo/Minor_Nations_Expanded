@@ -1,0 +1,8 @@
+PER_historical = {
+
+    name = "Irani Historical Plan"
+	
+    ai_national_focuses = {
+
+	}
+

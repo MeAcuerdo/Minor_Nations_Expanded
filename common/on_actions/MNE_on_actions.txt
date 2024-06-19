@@ -12,12 +12,45 @@ on_actions = {
                 PER = {
                     country_event = {
                         id = PER_anglosoviet.1
-                        days = 13
+                        days = 45
+                    }
+                }
+                PER = {
+                    set_variable = {
+                        no_invasion = 0
                     }
                 }
             }
             else = {
                 set_global_flag = ahistorical
+            }
+        }
+    }
+    on_daily_PER = {
+        if = {
+            limit = {
+                PER = {
+                    check_variable = {
+                        var = no_invasion
+                        value = 2800
+                    }
+                }
+            }
+            PER = {
+                clr_country_flag = impending_invasion
+            }
+        }
+        else = {
+            PER = {
+                add_to_variable = {
+                    var = no_invasion
+                    value = 1
+                }
+            }
+            PER = {
+                news_event = {
+                    id = PER_anglosoviet.6
+                }
             }
         }
     }

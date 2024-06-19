@@ -144,7 +144,7 @@ country_event = { #Surrender deal
     }
 }
 
-country_event = {
+news_event = { #War prevented
     id = PER_anglosoviet.6
     title = PER_anglosoviet.6.t
     desc = PER_anglosoviet.6.desc

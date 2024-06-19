@@ -1,0 +1,6 @@
+opinion_modifiers = {
+    negotiation_breakdown = {
+        value = -20
+        decay = 0.5
+    }
+}

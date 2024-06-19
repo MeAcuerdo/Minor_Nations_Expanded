@@ -1,0 +1,57 @@
+PER_anglo_soviet_pressure = {
+    allowed = {
+        original_tag = PER
+    }
+    visible = {
+        not = {
+            has_global_flag = PER_anglosoviet_invasion
+        }
+        not = {
+            has_country_flag = PER_lost_invasion
+        }
+        not = {
+            has_country_flag = PER_won_invasion
+        }
+        not = {
+            has_global_flag = ahistorical
+        }
+    }
+    icon = sov_great_patriotic_war
+    priority = {
+        base = 10
+    }
+}
+
+PER_invasion_ongoing = {
+    visible = {
+        has_global_flag = PER_anglosoviet_invasion
+    }
+    icon = generic_mountain_fortification
+    priority = {
+        base = 5
+        modifier = {
+            add = 10
+            tag = PER
+        }
+    }
+}
+
+PER_post_invasion_w = {
+    icon = CHL_nacista_decisions
+    visible = {
+        has_country_flag = PER_won_invasion
+    }
+    priority = {
+        base = 8
+    }
+}
+
+PER_post_invasion_l = {
+    icon = CHL_hispanic_unity_decisions
+    visible = {
+        has_country_flag = PER_lost_invasion
+    }
+    priority = {
+        base = 8
+    }
+}

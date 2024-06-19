@@ -1,0 +1,99 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            if = {
+                limit = {
+                    is_historical_focus_on = yes
+                }
+                PER = {
+                    set_country_flag = impending_invasion
+                    activate_mission = PER_invasion_threat
+                }
+                PER = {
+                    country_event = {
+                        id = PER_anglosoviet.1
+                        days = 45
+                    }
+                }
+                PER = {
+                    set_variable = {
+                        no_invasion = 0
+                    }
+                }
+            }
+            else = {
+                set_global_flag = ahistorical
+            }
+        }
+    }
+    on_daily_PER = {
+        if = {
+            limit = {
+                PER = {
+                    check_variable = {
+                        var = no_invasion
+                        value = 2800
+                    }
+                }
+            }
+            PER = {
+                clr_country_flag = impending_invasion
+            }
+        }
+        else = {
+            PER = {
+                add_to_variable = {
+                    var = no_invasion
+                    value = 1
+                }
+            }
+            PER = {
+                news_event = {
+                    id = PER_anglosoviet.6
+                }
+            }
+        }
+    }
+    on_peaceconference_ended = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        original_tag = PER
+                    }
+                    FROM = {
+                        original_tag = KUR
+                    }
+                }
+                PER = {
+                    clr_country_flag = KUR_rebellion_PER
+                }
+            }
+        }
+    }
+    on_release_as_free = {
+        effect = {
+            if = {
+                limit = {
+                    ROOT = {
+                        tag = BAB
+                    }
+                    set_province_name = {
+                        id = 2097
+                        name = Babylon
+                    }
+                    set_state_name = {
+                        id = 291
+                        name = Babylon
+                    }
+                    every_country = {
+                        news_event = {
+                            id = country_liberation.1
+                            days = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

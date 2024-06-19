@@ -1,0 +1,406 @@
+# Prewar
+
+PER_anglo_soviet_pressure = {
+    PER_invasion_threat = {
+        is_good = no
+        icon = CHL_carabineros
+        war_with_on_timeout = SOV
+        war_with_on_timeout = ENG
+        days_mission_timeout = 1750
+        fire_only_once = yes
+        visible = {
+            hidden_trigger = {
+                original_tag = PER
+            }
+            hidden_trigger = {
+                has_country_flag = impending_invasion
+            }
+        }
+        available = {
+            has_country_flag = prevent_invasion
+        }
+        cancel_if_not_visible = yes
+        timeout_effect = {
+            news_event = {
+                id = PER_anglosoviet.3
+            }
+            SOV = {
+                declare_war_on = {
+                    target = PER
+                    type = puppet_wargoal_focus
+                }
+            }
+            ENG = {
+                declare_war_on = {
+                    target = PER
+                    type = puppet_wargoal_focus
+                }
+            }
+            set_global_flag = PER_anglosoviet_invasion
+        }
+        priority = 15
+    }
+
+    PER_SOV_discontent = {
+        allowed = {
+            original_tag = XXX
+        }
+        visible = {
+            has_country_flag = sov_deleg
+        }
+        available = {
+            has_country_flag = invisible
+        }
+        cancel_if_not_visible = yes
+        is_good = yes
+        fire_only_once = yes
+        icon = generic_break_treaty
+        days_mission_timeout = 37
+        complete_effect = {
+            add_days_mission_timeout = {
+                mission = PER_invasion_threat
+                days = -40
+            }
+            news_event = {
+                id = PER_anglosoviet.4
+            }
+            hidden_effect = {
+                country_event = {
+                    id = PER_anglosoviet.5
+                    days = 75
+                }
+            }
+            hidden_effect = {
+                SOV = {
+                    news_event = {
+                        id = PER_anglosoviet_external.2
+                        days = 2
+                    }
+                }
+            }
+            clr_country_flag = sov_deleg
+            set_country_flag = sov_deleg_left
+        }
+        priority = 2
+    }
+
+    PER_SOV_negotiation = {
+        allowed = {
+            original_tag = PER
+        }
+        visible = {
+            has_country_flag = sov_deleg
+        }
+        cost = 15
+        icon = eng_trade_unions_demand
+        days_remove = 10
+        fire_only_once = yes
+        cancel_trigger = {
+            has_country_flag = sov_deleg_left
+        }
+        remove_effect = {
+            add_days_mission_timeout = {
+                mission = PER_invasion_threat
+                days = 45
+            }
+            set_country_flag = SOV_negotiation_complete
+        }
+    }
+
+    PER_gilan_mines = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            has_country_flag = SOV_negotiation_complete
+        }
+        visible = {
+            has_country_flag = sov_deleg_arrived
+            not = {
+                has_country_flag = sov_deleg_left
+            }
+        }
+        icon = infiltrate_state
+        fixed_random_seed = no
+        cost = 45
+        days_remove = 30
+        fire_only_once = yes
+        remove_effect = {
+            add_resource = {
+                type = steel
+                amount = 9
+                state = 420
+            }
+            random = {
+                chance = 40
+                add_days_mission_timeout = {
+                    mission = PER_invasion_threat
+                    days = 30
+                }
+            }
+        }
+    }
+
+    PER_con_brit = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            not = {
+                has_country_flag = no
+            }
+        }
+        cost = 25
+        days_remove = 14
+        fire_only_once = yes
+        complete_effect = {
+            add_stability = -0.035
+        }
+        remove_effect = {
+            give_resource_rights = {
+                receiver = ENG
+                state = 421
+            }
+        }
+    }
+}
+
+
+# Wartime
+
+PER_invasion_ongoing = {
+    PER_surrender = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            has_global_flag = PER_anglosoviet_invasion
+            surrender_progress > 0.25
+        }
+        visible = {
+            original_tag = PER
+        }
+        icon = generic_form_nation
+        fire_only_once = yes
+        complete_effect = {
+            white_peace = ENG
+            white_peace = SOV
+            custom_effect_tooltip = scripted_peace
+            set_country_flag = PER_lost_invasion
+            clr_global_flag = PER_anglosoviet_invasion
+            if = {
+                limit = {
+                    surrender_progress > 0.65
+                }
+                set_country_flag = PER_high_surrender
+            }
+        }
+    }
+
+    PER_end_the_war = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            hidden_trigger = {
+                has_global_flag = PER_anglosoviet_invasion
+            }
+            surrender_progress < 0.01
+            controls_state = 238
+            controls_state = 237
+            controls_state = 235
+            controls_state = 232
+            controls_state = 827
+            controls_state = 231
+            controls_state = 828
+            controls_state = 821
+            controls_state = 229
+            controls_state = 230
+            controls_state = 826
+        }
+        on_map_mode = decision_view_only
+        highlight_states = {
+            highlight_state_targets = {
+                state = 238
+                state = 237
+                state = 235
+                state = 232
+                state = 827
+                state = 231
+                state = 828
+                state = 229
+                state = 230
+                state = 821
+                state = 826
+            }
+        }
+        cancel_trigger = {
+            hidden_trigger = {
+                not = {
+                    controls_state = 238
+                }
+                not = {
+                    controls_state = 237
+                }
+                not = {
+                    controls_state = 235
+                }
+                not = {
+                    controls_state = 232
+                }
+                not = {
+                    controls_state = 827
+                }
+                not = {
+                    controls_state = 231
+                }
+                not = {
+                    controls_state = 828
+                }
+                not = {
+                    controls_state = 229
+                }
+                not = {
+                    controls_state = 230
+                }
+                not = {
+                    controls_state = 821
+                }
+                not = {
+                    controls_state = 826
+                }
+            }
+        }
+        cost = 15
+        days_remove = 14
+        fire_only_once = yes
+        icon = eng_trade_unions_demand
+        remove_effect = {
+            white_peace = ENG
+            white_peace = SOV
+            if = {
+                limit = {
+                    has_country_flag = GEO_independence
+                }
+                release_on_controlled = GEO
+            }
+            if = {
+                limit = {
+                    has_country_flag = PER_claimed_s_caucasus
+                }
+                230 = {
+                    transfer_state_to = PER
+                }
+                229 = {
+                    transfer_state_to = PER
+                }
+            }
+            else = {
+                custom_effect_tooltip = obtain_claimed_states
+            }
+            set_country_flag = PER_won_invasion
+            custom_effect_tooltip = cancel_if_requirements_not_met_dec
+        }
+    }
+
+    PER_claim_southern_caucasus = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            hidden_trigger = {
+                has_global_flag = PER_anglosoviet_invasion
+            }
+            controls_state = 230
+            controls_state = 229
+        }
+        highlight_states = {
+            highlight_state_targets = {
+                state = 230
+                state = 229
+            }
+        }
+        on_map_mode = decision_view_only
+        icon = infiltrate_state
+        cost = 15
+        days_remove = 60
+        fire_only_once = yes
+        modifier = {
+            political_power_cost = 0.2
+        }
+        remove_effect = {
+            230 = {
+                add_claim_by = PER
+            }
+            229 = {
+                add_claim_by = PER
+            }
+            set_country_flag = PER_claimed_s_caucasus
+        }
+    }
+
+    PER_support_GEO_independence = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            controls_state = 231
+            GEO = {
+                exists = no
+            }
+        }
+        cost = 25
+        fire_only_once = yes
+        icon = CHL_nacista_coup_attempt
+        days_remove = 15
+        remove_effect = {
+            set_country_flag = GEO_independence
+        }
+    }
+
+    GER_aid_PER = {
+        available = {
+            has_global_flag = PER_anglosoviet_invasion
+        }
+        visible = {
+            original_tag = GER
+        }
+        cost = 15
+        days_remove = 5
+        fire_only_once = yes
+        icon = eng_trade_unions_support
+        complete_effect = {
+            set_country_flag = GER_aided_PER
+            PER = {
+                add_equipment_to_stockpile = {
+                    type = infantry_equipment
+                    amount = 650
+                    producer = GER
+                }
+            }
+        }
+    }
+
+    GER_aid_PER_2 = {
+        available = {
+            has_global_flag = PER_anglosoviet_invasion
+        }
+        visible = {
+            original_tag = GER
+            has_country_flag = GER_aided_PER
+        }
+        cost = 35
+        days_remove = 10
+        fire_only_once = yes
+        icon = eng_trade_unions_support
+        complete_effect = {
+            PER = {
+                add_equipment_to_stockpile = {
+                    type = infantry_equipment
+                    amount = 1500
+                    producer = GER
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+PER_post_invasion_w = {
+    PER_war_recovery = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            has_war = no
+        }
+        cost = 55
+        fire_only_once = yes
+        days_remove = 200
+        modifier = {
+            political_power_gain = -0.15
+            war_support_factor = -0.25
+            stability_factor = -0.1
+            consumer_goods_factor = 0.12
+            training_time_factor = 0.3
+            production_speed_buildings_factor = 0.35
+            monthly_population = 0.5
+            local_resources_factor = 0.25
+            research_speed_factor = 0.1
+        }
+        remove_effect = {
+            set_country_flag = PER_recovered
+        }
+    }
+
+    PER_integrate_s_caucasus = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            owns_state = 230
+            owns_state = 229
+        }
+        cost = 50
+        icon = infiltrate_state
+        fire_only_once = yes
+        days_remove = 45
+        remove_effect = {
+            230 = {
+                add_core_of = PER
+            }
+            229 = {
+                add_core_of = PER
+            }
+        }
+    }
+
+    PER_satelite_GEO = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            hidden_trigger = {
+                GEO = {
+                    exists = yes
+                }
+            }
+            is_owner_neighbor_of = GEO
+            has_country_flag = GEO_independence
+        }
+        icon = CHL_mapuche_establish_a_guianan_government
+        cost = 25
+        fire_only_once = yes
+        days_remove = 30
+        modifier = {
+            political_power_cost = 0.05
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_dlc = "Together for Victory"
+                }
+                set_autononomy = {
+                    target = GEO
+                    autonomous_state = autonomy_integrated_puppet
+                }
+                else = {
+                    puppet = {
+                        target = GEO
+                        end_wars = no
+                    }
+                }
+            }
+        }
+    }
+    
+    PER_ride_waves_of_victory = {
+        allowed = {
+            original_tag = PER
+        }
+        available = {
+            has_country_flag = PER_recovered
+            IRQ = {
+                is_subject = no
+                is_owner_neighbor_of = PER
+            }
+        }
+        icon = generic_army_support
+        custom_cost_trigger = {
+            command_power > 30
+            political_power > 50
+        }
+        custom_cost_text = decision_cost_CP_30_and_PP_50
+        fire_only_once = yes
+        days_remove = 90
+        war_with_on_timeout = IRQ
+        modifier = {
+            political_power_cost = 0.15
+        }
+        remove_effect = {
+            declare_war_on = {
+                target = IRQ
+                type = annex_everything
+            }
+        }
+    }
+}

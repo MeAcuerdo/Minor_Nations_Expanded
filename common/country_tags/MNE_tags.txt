@@ -1,0 +1,2 @@
+BAB = countries/Babylon.txt
+SAB = countries/Sistan_and_Baluchestan.txt

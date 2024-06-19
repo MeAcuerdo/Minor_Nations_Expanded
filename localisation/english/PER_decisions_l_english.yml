@@ -48,3 +48,4 @@ decision_cost_CP_25_tooltip: "It costs £command_power  §Y25§! to take the dec
 decision_cost_CP_30_and_PP_50: "£command_power  §Y25§! and £political_power  §Y25§!"
 decision_cost_CP_30_and_PP_50_blocked: "£command_power  §Y25§! and £political_power  §Y25§!"
 decision_cost_CP_30_and_PP_50_tooltip: "It costs £command_power  §Y25§! and £political_power  §Y25§ to take the decision"
+

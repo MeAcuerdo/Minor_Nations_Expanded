@@ -1,0 +1,89 @@
+﻿add_namespace = austria
+
+country_event = {
+	id = austria.1
+	title = "Austrian spy group captured outside house of government"
+	desc = austria.1.d
+	picture = GFX_news_event_ger_civil_war
+	
+	is_triggered_only = yes
+	
+	option = { #laugh
+		name = "Good Riddance.."
+		ai_chance = { factor = 33 }
+		add_political_power = 15
+		add_stability = -0.05	
+        AUS = { country_event = { id = austria.3 }}		
+	}
+}
+
+country_event = {
+	id = austria.2
+	title = "Our leader has been captured by Austrian spies!"
+	desc = austria.2.d
+	picture = GFX_news_event_generic_parliament
+	is_triggered_only = yes
+	
+	option = { #confusedangry
+	    ai_chance = { factor = 100 }
+		name = "What the hell!?"
+		add_political_power = -15
+		add_stability = -0.30
+		AUS = {country_event = { id = austria.4 }}
+	}
+}
+
+country_event = {
+	id = austria.3
+	title = "Infiltration Failed!"
+	desc = austria.3.d
+	picture = GFX_news_event_hungary_refused
+	
+	is_triggered_only = yes
+	
+	option = { #fight
+		name = "No time to waste! Fight them!"
+		ai_chance = { factor = 33 }
+		add_political_power = 15
+		add_stability = -0.05
+        AUS = {
+            declare_war_on = {
+                target = HUN
+                type = annex_everything
+		    }
+		}		
+	}
+	option = { #backdown
+		name = "Maybe we should reconsider our expansionism.."
+		ai_chance = { factor = 67 }
+		add_political_power = -10
+		add_stability = -0.05
+	    HUN = {
+	     add_opinion_modifier = {
+			    target = AUS
+			    modifier = large_decrease
+			}
+		}
+	}
+}
+
+country_event = {
+	id = austria.4
+	title = "Infiltration Successful!"
+	desc = austria.4.d
+	picture = GFX_news_event_019
+	
+	is_triggered_only = yes
+	
+	option = { #annex
+		name = "And who said an Austrian can't be sneaky?"
+		ai_chance = { factor = 100 }
+		add_political_power = 75
+		add_stability = 0.10		
+		annex_country = {
+		 target = HUN
+		 transfer_troops = yes
+		}
+	}
+}
+

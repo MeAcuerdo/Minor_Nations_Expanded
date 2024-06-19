@@ -1,0 +1,5 @@
+
+AUS_HABSBURG = {
+    color = rgb { 145 145 145 }
+	color_ui = { 140 140 145 }
+}

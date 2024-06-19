@@ -1,0 +1,413 @@
+ideas = {
+
+	country = {
+
+		AUS_disfiguration = {
+		    picture = generic_volunteer_expedition_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.1
+				attrition = -0.2
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		AUS_right_wing_politics = {
+		    picture = generic_fascism_rising
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.05
+				surrender_limit = 0.15
+				compliance_gain = -0.2
+				research_speed_factor = -0.15
+			}
+		}
+		
+		AUS_left_wing_politics = {
+		    picture = generic_communism_drift_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = -0.05
+				surrender_limit = -0.15
+				compliance_gain = 0.2
+				research_speed_factor = 0.15
+			}
+		}
+		
+		AUS_evolution_supported = {
+		    picture = generic_fascism_drift_2
+			allowed = {always = no}
+			modifier = {
+			 fascism_drift = 0.02
+			 fascism_acceptance = 85
+			}
+		}
+		
+		AUS_tactical_expansion = {
+		    picture = HUN_secret_rearmament
+			allowed = {
+				always = no
+			}
+			modifier = {
+				justify_war_goal_time = 0.2
+				offensive_war_stability_factor = 0.3
+				army_attack_factor = 0.15
+				army_defence_factor = 0.35
+			}
+		}
+        
+        AUS_revolution_1 = {
+            picture = generic_communism_drift_bonus
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    communism_drift = 0.03
+			    stability_weekly = -0.02
+			}
+		} 
+		AUS_revolution_2 = {
+            picture = generic_communism_drift_bonus
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    communism_drift = 0.04
+				production_factory_max_efficiency_factor = 0.25
+				production_factory_efficiency_gain_factor = -0.1
+			    stability_weekly = -0.02
+			}
+		}
+		
+		AUS_dependence_on_germany = {
+		    picture = hol_caved_to_the_germans
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    stability_factor = -0.1
+				war_support_factor = -0.1
+				fascism_drift = 0.02
+			}
+		}
+
+        AUS_strategic_expansion = {
+		    picture = HUN_secret_rearmament
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    justify_war_goal_time = 0.5
+				offensive_war_stability_factor = 0.3
+				war_stability_factor = 0.25
+				army_attack_factor = 0.35
+				army_defence_factor = 0.15
+				compliance_gain = 0.02
+			}
+		}
+		
+        AUS_agricultural_works = {
+		    picture = triumphant_will
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    war_stability_factor = 0.2
+				compliance_gain = 0.01
+				political_power_factor = 0.15
+				communism_drift = 0.05
+				production_lack_of_resource_penalty_factor = -0.35 
+				defence = 0.05
+			}
+		}
+		
+        AUS_anti_fascist_policy = {
+		    picture = generic_fascism_banned
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    fascism_drift = -0.03
+				drift_defence_factor = 0.2
+				research_speed_factor = 0.1
+			}
+		}
+		
+		AUS_hungarian_irrenditism_1 = {
+		    picture = HUN_treaty_of_triannon
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				compliance_gain = 0.02
+				army_attack_speed_factor = 0.15
+				weekly_manpower = 1000
+			}
+		}
+		
+		AUS_hungarian_irrenditism_2 = {
+		    picture = HUN_treaty_of_triannon
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				army_attack_speed_factor = 0.15
+				weekly_manpower = 2000
+			}
+		}
+
+        AUS_hegemony = {
+		    picture = monarchist_hegemony
+			allowed = { always = no}
+			modifier = {
+			    stability_weekly = 0.005
+				neutrality_acceptance = 50
+				send_volunteers_factor = 0.5
+				send_volunteers_tension = -0.2
+				guarantee_cost = 0.2
+				political_power_factor = 0.1
+				conscription_factor = 0.08
+			}
+		}
+		
+		AUS_path_in_the_snow = {
+		    picture = path_in_the_snow
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    stability_factor = 0.01
+				war_support_factor = 0.2
+				neutrality_drift = 0.01
+				research_speed_factor = 0.1
+				political_power_factor = 0.15
+			}
+		}
+		
+		AUS_anti_yugoslavism_policies = {
+		    picture = FRA_matignon_agreements
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    stability_factor = 0.1
+				war_support_factor = 0.2
+				political_power_factor = 0.1
+			}
+		}
+		
+		AUS_liberal_approach_1 = {
+		    picture = generic_democratic_drift_bonus
+			allowed = {always = no}
+			modifier = {
+			 democratic_drift = 0.02
+			 democratic_acceptance = 85
+			}
+		}
+		
+		AUS_liberal_approach_2 = {
+		    picture = generic_democratic_drift_bonus
+			allowed = {always = no}
+			modifier = {
+			 democratic_drift = 0.05
+			 democratic_acceptance = 85
+			}
+		}
+		
+		AUS_liberal_approach_3 = {
+		    picture = generic_democratic_drift_bonus
+			allowed = {always = no}
+			modifier = {
+			 democratic_drift = 0.1
+			 democratic_acceptance = 85
+			}
+		}	
+		
+		AUS_protect_the_simple_man = {
+		    picture = generic_constitutional_guarantee
+			allowed = {always = no}
+			modifier = {
+			 resistance_growth_on_our_occupied_states = 0.85
+			 stability_weekly = 0.002
+			 war_support_factor = -0.3
+			 justify_war_goal_time = 0.5
+			 production_speed_buildings_factor = 0.2
+			}
+		}
+		
+		AUS_war_preparation = {
+		    picture = generic_war_preparation
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				war_support_factor = 0.1
+				research_speed_factor = 0.15
+				army_morale_factor = 0.8
+				defence = 0.35
+				offence = 0.05
+			}
+		}
+		
+		AUS_crisis_averted = {
+		    picture = generic_morale_bonus
+			allowed = {always = no}
+			modifier = {
+			 stability_weekly = 0.004
+			 war_support_factor = 0.1
+			 production_speed_buildings_factor = 0.15
+			}
+		}		
+		
+		AUS_extreme_propaganda = {
+		    picture = generic_fascism_drift_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.1
+				surrender_limit = 0.3
+				army_morale_factor = 0.35
+				fascism_drift = 0.05
+			}
+		}
+		
+		AUS_loyalty_to_vienna = {
+		    picture = HUN_treaty_of_triannon
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				offensive_war_stability_factor = 0.2
+				defensive_war_stability_factor = 0.2
+				compliance_gain = 0.05
+				weekly_manpower = 1200
+			}
+		}
+		
+		AUS_extreme_propaganda = {
+		    picture = generic_morale_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.15
+				surrender_limit = 0.3
+				justify_war_goal_time = -0.3
+				enemy_declare_war_tension = 0.8
+			}
+		}
+		
+		AUS_cut_down_to_size = {
+		    picture = generic_war_preparation
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.2
+				production_factory_efficiency_gain_factor = 0.15
+                production_lack_of_resource_penalty_factor = -0.25
+				consumer_goods_factor = 0.15
+			}
+		}
+		
+		AUS_mountain_confederation_member = {
+		    picture = generic_agrarian_society
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				research_speed_factor = 0.15
+                production_lack_of_resource_penalty_factor = -0.15
+				weekly_manpower = 1500
+				compliance_gain = 0.1
+				stability_factor = 0.15
+				war_support_factor = -0.15
+			}
+		}
+		
+		AUS_monism = {
+		    picture = generic_pp_unity_bonus
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				research_speed_factor = 0.2
+			}
+		}
+		
+		AUS_lower_tax = {
+		    picture = generic_morale_bonus
+			allowed = {
+			 always = no
+			}
+			modifier = {
+			 stability_weekly = 0.002
+			 production_speed_buildings_factor = 0.15
+			}
+		}
+		
+		AUS_womens_suffrage = {
+		    picture = generic_democratic_drift_bonus
+			allowed = {
+			 always = no
+			}
+			modifier = {
+			 stability_factor = -0.05
+			 stability_weekly = 0.001
+			 production_speed_buildings_factor = -0.05
+			 army_morale_factor = 0.05
+			 drift_defence_factor = 0.35
+			}
+		}
+		
+		AUS_safehaven = {
+		    picture = generic_agrarian_society
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				research_speed_factor = 0.15
+                production_lack_of_resource_penalty_factor = -0.15
+				weekly_manpower = 1500
+				compliance_gain = 0.1
+				stability_factor = 0.15
+				war_support_factor = -0.15
+			}
+		}
+		
+		AUS_immigration = {
+		    picture = generic_agrarian_society
+			allowed = {
+			    always = no
+			}
+			modifier = {
+				weekly_manpower = 1500
+				compliance_gain = 0.5
+				stability_factor = 0.15
+				political_power_factor = 0.35
+			}
+		}
+		
+		AUS_fight_for_unity = {
+		    picture = generic_morale_bonus
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			 resistance_activity = -5
+			 justify_war_goal_time = -1.5
+			 resistance_target = -2.5
+			}
+		}
+    }
+}

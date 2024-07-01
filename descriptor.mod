@@ -3,4 +3,4 @@ tags={
 	"National Focuses"
 }
 name="MNE Dev"
-supported_version="1.14.4"
+supported_version="1.14.7"

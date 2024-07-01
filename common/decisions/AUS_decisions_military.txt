@@ -156,7 +156,7 @@ AUS_army_expans = {
             clr_country_flag = Already_training
         }
     }
-AUS_emergency_recruting = {
+    AUS_emergency_recruting = {
         allowed = {
             original_tag = AUS
         }
@@ -182,7 +182,7 @@ AUS_emergency_recruting = {
             }
         }
     }
-AUS_ground_exercises = {
+    AUS_ground_exercises = {
         allowed = {
             original_tag = AUS
         }

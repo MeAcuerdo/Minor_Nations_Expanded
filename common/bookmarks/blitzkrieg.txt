@@ -1,0 +1,1 @@
+# File has to exist so the game doesn't load the default one

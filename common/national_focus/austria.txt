@@ -11,7 +11,7 @@ focus_tree = {
 	
 	default = no
 	
-	continuous_focus_position = { x = 500 y = 700 }
+	continuous_focus_position = { x = 100 y = 1500 }
 	
 	focus = {
 	    id = AUS_industrial_investments
@@ -54,8 +54,8 @@ focus_tree = {
 			custom_effect_tooltip = AUS_industrial_investments_tooltip
 	    }
     }
-	
-		focus = {
+
+	focus = {
 	    id = AUS_rehabilitation
 		icon = GFX_focus_spa_the_spanish_miracle
 		x = -4
@@ -1455,7 +1455,7 @@ focus_tree = {
 		prerequisite = {focus = AUS_end_the_horthy_regime}
 		prerequisite = {focus = AUS_immigration}
 		prerequisite = {focus = AUS_liberate_bavaria}
-		prerequisite = [focus = AUS_safehaven_for_jews}
+		prerequisite = {focus = AUS_safehaven_for_jews}
 		prerequisite = {focus = AUS_protect_the_simple_man}
 		prerequisite = {focus = AUS_ideological_enemies}
 		
@@ -4280,8 +4280,6 @@ focus_tree = {
 		 focus = AUS_capital_ship_development
 		}
 		
-		mutually_exclusive = {focus = AUS_capital_ship_development}
-		
 		completion_reward = {
 		 navy_experience = 25
 		 add_tech_bonus = {
@@ -4693,9 +4691,9 @@ focus_tree = {
 			 category = special_forces_doctrine
 			}
 		}
+		#category = air_equipment
+		#category = naval_equipment
 	}
-#category = air_equipment
-#category = naval_equipment
 
 	focus = {
 	
@@ -4871,7 +4869,15 @@ focus_tree = {
 		
 		available = {
 		 NOT = {has_idea = extensive_conscription}
-		 has_war_with = CZE
+		 OR = {
+			has_war_with = CZE
+			CZE = {
+				OR = {
+					exists = no
+					is_subject_of = AUS
+				}
+			}
+		 }
 		}
 		
 		prerequisite = {focus = AUS_proclaim_a_new_age}
@@ -4920,6 +4926,8 @@ focus_tree = {
 		prerequisite = {focus = AUS_nitpicking}
 		
 		completion_reward = {
+			custom_effect_tooltip = AUS_eves_apple_tooltip
+
 		}
 	}
 	
@@ -4927,32 +4935,38 @@ focus_tree = {
 	    
 		id = AUS_trade_control_over_the_baltic_and_northern_seas
 		icon = GFX_focus_generic_attack_denmark
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = AUS_eves_apple
 		
 		cost = 10
 		
 		available = {
-		 NOT = {
-		     OR = {has_war_with = GER}
-			 OR = {has_war_with = DEN}
+			NOT = {
+				has_war_with = DEN
 			}
-		 has_political_power > 100
+			GER = {
+				OR = {
+					is_puppet_of = AUS
+					exists = no
+				}
+			}
+			has_political_power > 100
 		}
 		
 		prerequisite = {focus = AUS_eves_apple}
 		
 		completion_reward = {
 		 add_political_power = -100
+		 custom_effect_tooltip = AUS_trade_control_over_the_baltic_and_northern_seas_tooltip
 		}
 	}
 	
 	focus = {
 	
 	    id = AUS_anti_capitalism
-		icon = GFX_focus_generic_industry_3
-		x = 6
+		icon = GFX_focus_eng_crush_the_dream
+		x = 5
 		y = 1
 		relative_position_id = AUS_secure_the_front
 		
@@ -4965,6 +4979,10 @@ focus_tree = {
 		prerequisite = {focus = AUS_secure_the_front}
 		
 		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.075
+			}
 		 4 = {
      		 add_extra_state_shared_building_slots = 2
 			 add_building_construction = {
@@ -4977,7 +4995,7 @@ focus_tree = {
      		 add_extra_state_shared_building_slots = 2
 			 add_building_construction = {
 			     type = industrial_complex
-			     level = 2
+			     level = 1
 			     instant_build = yes
 				}
 			}
@@ -4987,8 +5005,8 @@ focus_tree = {
 	focus = {
 	    
 		id = AUS_agricultural_works
-		icon = GFX_goal_generic_consumer_goods
-		x = 9
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 7
 		y = 1
 		relative_position_id = AUS_secure_the_front
 		
@@ -5010,7 +5028,7 @@ focus_tree = {
 		
 		completion_reward = {
 		 add_political_power = -50
-		 add_ideas = AUS_agricultural_works
+		 add_ideas = AUS_agricultural_work
 		}
 	}
 	
@@ -5092,3 +5110,114 @@ focus_tree = {
 		 create_faction = "Revolutionary League"
 		}
 	}
+
+	focus = {
+
+		id = AUS_devided_once_again
+		icon = GFX_focus_POL_prepare_for_the_inevitable
+		x = -1
+		y = 1
+		relative_position_id = AUS_eves_apple
+		
+		cost = 10
+		
+		available = {
+		 NOT = {has_war_with = POL}
+		}
+		
+		prerequisite = {focus = AUS_eves_apple}
+		
+		completion_reward = {
+			add_manpower = 35000
+			army_experience = 25
+			custom_effect_tooltip = AUS_devided_once_again_tooltip
+		}
+	}
+
+	focus = {
+
+		id = AUS_agricultural_modernization
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		relative_position_id = AUS_anti_capitalism
+
+		cost = 7
+
+		prerequisite = {focus = AUS_anti_capitalism}
+		prerequisite = {focus = AUS_agricultural_works}
+		mutually_exclusive = {focus = AUS_subsidies_for_farmers}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = AUS_agricultural_work
+				add_idea = AUS_agricultural_modern
+			}
+		}
+	}
+
+	focus = {
+
+		id = AUS_subsidies_for_farmers
+		icon = GFX_focus_generic_agricultural_subsidies
+		x = 1
+		y = 1
+		relative_position_id = AUS_agricultural_works
+
+		cost = 10
+
+		prerequisite = {focus = AUS_agricultural_works}
+		mutually_exclusive = {focus = AUS_agricultural_modernization}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = AUS_agricultural_work
+				add_idea = AUS_agricultural_sub
+			}
+		}
+	}
+
+	focus = {
+
+		id = AUS_develop_the_countryside
+		icon = GFX_focus_generic_com_crane
+		x = 1
+		y = 1
+		relative_position_id = AUS_agricultural_modernization
+
+		cost = 10
+
+		prerequisite = {
+			focus = AUS_agricultural_modernization
+			focus = AUS_subsidies_for_farmers
+		}
+		completion_reward = {
+			152 = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+			    	type = industrial_complex
+			    	level = 2
+			    	instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+
+		id = AUS_a_com_army
+		icon = GFX_focus_aus_a_com_army
+		x = -1
+		y = 1
+		relative_position_id = AUS_anti_capitalism
+
+		cost = 10
+
+		prerequisite = {focus = AUS_anti_capitalism}
+
+		completion_reward = {
+			army_experience = 50
+			add_manpower = 35000
+		}
+	}
+}

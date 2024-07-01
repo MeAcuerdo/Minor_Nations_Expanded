@@ -1,4 +1,19 @@
 spriteTypes = {	
+	
+	spriteType = {
+		name = "GFX_focus_generic_agricultural_subsidies"
+		texturefile = "gfx/interface/goals/focus_generic_agricultural_subsidies.dds"
+	}
+
+	spriteType = {
+		name = "GFX_focus_generic_com_crane"
+		texturefile = "gfx/interface/goals/focus_generic_com_crane.dds"
+	}
+
+	spriteType = {
+		name = "GFX_focus_aus_a_com_army"
+		texturefile = "gfx/interface/goals/focus_aus_a_com_army.dds"
+	}
 
 	#### Generic continuous goal icons
 

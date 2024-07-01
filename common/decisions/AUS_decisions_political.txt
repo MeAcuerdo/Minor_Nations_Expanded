@@ -39,6 +39,7 @@ AUS_confed_expansion = {
             }
         }
     }
+
     AUS_comm_war_HUN = {
         allowed = {
             original_tag = AUS
@@ -79,6 +80,7 @@ AUS_confed_expansion = {
             }
         }   
     }
+
     AUS_comm_war_CZE = {
         allowed = {
             original_tag = AUS
@@ -119,6 +121,7 @@ AUS_confed_expansion = {
             }
         }
     }
+
     AUS_comm_war_GER = {
         allowed = {
             original_tag = AUS
@@ -162,6 +165,7 @@ AUS_confed_expansion = {
             }
         }
     }
+
     AUS_comm_war_POL = {
         allowed = {
             original_tag = AUS
@@ -202,6 +206,7 @@ AUS_confed_expansion = {
             }
         }
     }
+
     AUS_comm_war_DEN = {
         allowed = {
             original_tag = AUS
@@ -242,11 +247,16 @@ AUS_confed_expansion = {
             }
         }
     }
+
     AUS_core_socfed = {
         allowed = {
             original_tag = AUS
         }
         available = {
+            custom_trigger_tooltip = {
+                tooltip = AUS_socfed_requirements_tooltip
+            }
+            hidden_trigger = {
                 owns_state = 99
                 owns_state = 37
                 owns_state = 910
@@ -305,6 +315,7 @@ AUS_confed_expansion = {
                 owns_state = 10
                 owns_state = 98
                 owns_state = 87
+            }
         }
         highlight_states = {
             highlight_state_targets = {
@@ -374,6 +385,7 @@ AUS_confed_expansion = {
         days_remove = 50
         icon = generic_form_nation
         remove_effect = {
+            hidden_effect {
                 add_state_core = 99
                 add_state_core = 37
                 add_state_core = 910
@@ -432,6 +444,8 @@ AUS_confed_expansion = {
                 add_state_core = 10
                 add_state_core = 98
                 add_state_core = 87
+            }
+            custom_effect_tooltip = Core_all_required_states
         }
     }
 }

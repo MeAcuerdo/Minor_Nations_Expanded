@@ -112,7 +112,7 @@ ideas = {
 			}
 		}
 		
-        AUS_agricultural_works = {
+        AUS_agricultural_work = {
 		    picture = triumphant_will
 			allowed = {
 			    always = no
@@ -124,6 +124,39 @@ ideas = {
 				communism_drift = 0.05
 				production_lack_of_resource_penalty_factor = -0.35 
 				defence = 0.05
+			}
+		}
+
+		AUS_agricultural_modern = {
+		    picture = triumphant_will
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    war_stability_factor = 0.2
+				compliance_gain = 0.01
+				political_power_factor = 0.15
+				communism_drift = 0.05
+				production_lack_of_resource_penalty_factor = -0.35 
+				defence = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		AUS_agricultural_sub = {
+		    picture = triumphant_will
+			allowed = {
+			    always = no
+			}
+			modifier = {
+			    war_stability_factor = 0.2
+				compliance_gain = 0.02
+				political_power_factor = 0.15
+				communism_drift = 0.05
+				production_lack_of_resource_penalty_factor = -0.35 
+				defence = 0.05
+				consumer_goods_factor = 0.035
+				stability_factor = 0.05
 			}
 		}
 		

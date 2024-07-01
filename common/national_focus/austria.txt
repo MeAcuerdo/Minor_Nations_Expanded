@@ -51,6 +51,7 @@ focus_tree = {
 				uses = 2
 				category = industry
 			}
+			custom_effect_tooltip = AUS_industrial_investments_tooltip
 	    }
     }
 	
@@ -1293,6 +1294,7 @@ focus_tree = {
 		 add_political_power = 40
 		 navy_experience = 5
 		 air_experience = 5
+		 custom_effect_tooltip = AUS_expand_the_ministries_of_defense_tooltip
 		}
 	}
 	
@@ -1598,6 +1600,7 @@ focus_tree = {
 			 uses = 1
 			 category = motorized_equipment
 			}
+			custom_effect_tooltip = AUS_war_preparation_tooltip
 		}
 	}
 	
@@ -4834,18 +4837,6 @@ focus_tree = {
 	}
 	
 	focus = {
-	    id = AUS_focus
-		x = 20
-		y = 20
-		
-		cost = 0
-		
-		completion_reward = {
-		 BAY = {set_state_owner = 1}
-		}
-	}
-	
-	focus = {
 	    
 		id = AUS_nitpicking
 		icon = GFX_focus_generic_combined_arms
@@ -4872,7 +4863,7 @@ focus_tree = {
 	    
 		id = AUS_saint_germain_en_laye
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = AUS_proclaim_a_new_age
 		
@@ -4936,7 +4927,7 @@ focus_tree = {
 	    
 		id = AUS_trade_control_over_the_baltic_and_northern_seas
 		icon = GFX_focus_generic_attack_denmark
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = AUS_eves_apple
 		

@@ -305,3 +305,8 @@ AUS_trade_control_over_the_baltic_and_northern_seas:0 "Trade Control over the Ba
 AUS_trade_control_over_the_baltic_and_northern_seas_desc:0 "Trade Control over the Baltic and Northern seas is particularly helpful for a nation wanting to dominate Europe. After all, with the new German lands, we might as well inherit their naval legacies. Onward, to get rid of Denmark!"
 AUS_proclaim_a_new_age_tooltip:0 "Unlocks §YConfederal Expansions§! decisions."
 AUS_nitpicking_tooltip:0 "Unlocks §YAttack Switzerland§! and §YAttack Hungary§! decisions."
+AUS_war_preparation_tooltip: "Unlocks §YArms Deals§! decisions."
+AUS_expand_the_ministries_of_defense_tooltip: "Unlocks §YArmy expansion§! decisions."
+AUS_industrial_investments_tooltip: "Unlocks §YEconomic policies§! decisions."
+AUS_anti_capitalism: "The war on Capitalism"
+AUS_anti_capitalism_desc: "For long enough has the working class suffered from the bourgoise's need for profit. It's time to put the means of production back into the people's hands."

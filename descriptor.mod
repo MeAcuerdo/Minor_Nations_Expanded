@@ -1,10 +1,6 @@
-version="1.14.3"
-picture="thumbnail.png"
+version="1.0"
 tags={
 	"National Focuses"
-	"Alternative History"
-	"Gameplay"
 }
-name="Minor Nations Expanded"
-supported_version="1.14.3"
-remote_file_id="3077708079"
+name="MNE Dev"
+supported_version="1.14.4"

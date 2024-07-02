@@ -15,6 +15,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/focus_aus_a_com_army.dds"
 	}
 
+	spriteType = {
+		name = "GFX_focus_generic_industrialists"
+		texturefile = "gfx/interface/goals/focus_generic_industrialists.dds"
+	}
+
 	#### Generic continuous goal icons
 
 	SpriteType = {

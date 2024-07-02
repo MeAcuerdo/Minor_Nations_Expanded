@@ -18,7 +18,22 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_monarchist_hegemony"
 		texturefile = "gfx/interface/ideas/monarchist_hegemony.dds"
-	}	
+	}
+	
+	spriteType = {
+		name = "GFX_idea_AUS_expelled_burgoise"
+		texturefile = "gfx/interface/ideas/AUS_expelled_burgoise.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_the_communist_dream"
+		texturefile = "gfx/interface/ideas/generic_the_communist_dream.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_AUS_the_international_revolution"
+		texturefile = "gfx/interface/ideas/AUS_the_international_revolution.dds"
+	}
 	
 	spriteType = {
 		name = "GFX_idea_generic_degauss_ship_hulls"
@@ -8204,6 +8219,4 @@ spriteTypes = {
 		name = "GFX_idea_hih_siderius"
 		texturefile = "gfx/interface/ideas/idea_hol_hih_siderius.dds"
 	}
-	
-
 }

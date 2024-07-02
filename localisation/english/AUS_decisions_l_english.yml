@@ -8,6 +8,7 @@ AUS_comm_war_GER: "Attack [GER.GetName]"
 AUS_comm_war_DEN: "Attack Denmark"
 AUS_comm_war_POL: "Attack Poland"
 AUS_core_socfed: "Integrate The Association Of Socialist States"
+Already_justifying: "Already justifying"
 Core_all_required_states: "We will core all states required for this decision"
 AUS_socfed_requirements_tooltip: "Owns all §YAustrian§! states\nOwns all §YSwiss§! states\nOwns all §YGerman§! states\nOwns all §YCzechoslovak§! states\nOwns all §YHungarian§! states\nOwns all western §YPolish§! states\nOwns mainland §YDenmark§!"
 

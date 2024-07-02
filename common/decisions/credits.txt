@@ -1,19 +1,19 @@
 credits = {
     Mashedd = {
         available = {
-            has_country_flag = No
+            has_country_flag = nuhuh
         }
         icon = generic_army_support
     }
     MeAcuerdo = {
         available = {
-            has_country_flag = No
+            has_country_flag = nuhuh
         }
         icon = generic_army_support
     }
     Commander120 = {
         available = {
-            has_country_flag = No
+            has_country_flag = nuhuh
         }
         icon = generic_army_support
     }

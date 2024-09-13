@@ -19,4 +19,600 @@ focus_tree = {
 	}
 	
 	default = no
+
+	continuous_focus_position = { x = 100 y = 1000 }
+
+	focus = {
+
+		id = PER_an_outdated_economy
+		icon = GFX_focus_generic_industry_1
+		x = 4
+		y = 0
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		available = {
+			has_war_with_major = no
+		}
+
+		cost = 10
+
+		completion_reward = {
+			266 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+                	type = industrial_complex
+                	level = 1
+                	instant_build = yes
+				}
+			}
+			420 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+			    	type = industrial_complex
+					level = 1
+				 	instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_the_military_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		relative_position_id = PER_an_outdated_economy
+
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH}
+
+		cost = 10
+
+		prerequisite = {focus = PER_an_outdated_economy}
+
+		completion_reward = {
+			266 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+			     	type = arms_factory
+				 	level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		
+		id = PER_sway_from_the_ways_of_old
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 0
+
+		search_filters = {FOCUS_FILTER_STABILITY}
+
+		cost = 10
+
+		available = {
+			num_of_factories > 12
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = PER_outdated_economy_1
+				add_idea = PER_outdated_economy_2
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_raise_living_standarts
+		icon = GFX_focus_generic_population_growth
+		x = 0
+		y = 1
+		relative_position_id = PER_sway_from_the_ways_of_old
+
+		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
+
+		cost = 5
+
+		prerequisite = {focus = PER_sway_from_the_ways_of_old}
+
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.03
+		}
+	}
+
+	focus = {
+
+		id = PER_an_army_new_age
+		icon = GFX_focus_chi_army_reform
+		x = 16
+		y = 0
+
+		cost = 5
+
+		completion_reward = {
+			army_experience = 45
+		}
+	}
+
+	focus = {
+
+		id = PER_infantry_eq_improv
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		x = -8
+		y = 1
+		relative_position_id = PER_an_army_new_age
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		cost = 7
+
+		prerequisite = {focus = PER_an_army_new_age}
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				bonus = 0.35
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_the_civilian_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		relative_position_id = PER_an_outdated_economy
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cost = 10
+
+		prerequisite ={focus = PER_an_outdated_economy}
+
+		completion_reward = {
+			266 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+			     	type = industrial_complex
+				 	level = 1
+					instant_build = yes
+				}
+			}
+			419 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+			     	type = industrial_complex
+				 	level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_the_tehran_university
+		icon = GFX_focus_research2
+		x = 1
+		y = 2
+		relative_position_id = PER_an_outdated_economy
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		available = {
+			has_war = no
+			num_of_factories > 14
+			num_of_civilian_factories > 8
+		}
+		available_if_capitulated = no
+
+		cost = 10
+
+		prerequisite = {focus = PER_the_military_industrial_complex}
+		prerequisite = {focus = PER_the_civilian_economy}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+
+		id = PER_equip_the_army
+		icon = GFX_goal_generic_small_arms
+		x = 1
+		y = 1
+		relative_position_id = PER_the_military_industrial_complex
+
+		cost = 10
+
+		prerequisite = {focus = PER_the_military_industrial_complex}
+		prerequisite = {focus = PER_infantry_eq_improv}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1250
+				producer = PER
+			}
+			add_timed_idea = {
+				idea = PER_infantry_eq_man
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_defense_of_the_kingdom
+		icon = GFX_goal_generic_fortify_city
+		x = -4
+		y = 1
+		relative_position_id = PER_an_army_new_age
+
+		cost = 10
+
+		prerequisite = {focus = PER_an_army_new_age}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = PER_homeland_defense
+				days = 720
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_naval_effort
+		icon = GFX_goal_generic_build_navy
+		x = 8
+		y = 3
+
+		cost = 10
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 40
+			412 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_prepare_for_the_inevitable
+		icon = GFX_goal_generic_demand_territory
+		x = 26
+		y = 0
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		cost = 5
+
+		mutually_exclusive = {focus = PER_defeatism}
+
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+
+		id = PER_the_southern_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 2
+		relative_position_id = PER_the_military_industrial_complex
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		available = {
+			412 = {
+				is_fully_controlled_by = PER
+			}
+			410 = {
+				is_fully_controlled_by = PER
+			}
+			413 = {
+				is_fully_controlled_by = PER
+			}
+		}
+
+		cost = 10
+
+		prerequisite = {focus = PER_the_military_industrial_complex}
+
+		completion_reward = {
+			412 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			410 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			413 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_defeatism
+		icon = GFX_goal_generic_major_war
+		x = 28
+		y = 0
+
+		available = {
+			has_country_flag = nuhuh
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		cost = 10
+
+		mutually_exclusive = {focus = PER_prepare_for_the_inevitable}
+	}
+
+	focus = {
+
+		id = PER_submarine_warfare
+		icon = GFX_goal_generic_navy_submarine
+		x = 3
+		y = 1
+		relative_position_id = PER_naval_effort
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		cost = 10
+
+		prerequisite = {focus = PER_naval_effort}
+		mutually_exclusive = {focus = PER_a_surface_fleet}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_trade_interdiction
+			}
+			if = {
+				limit = {
+					has_dlc = man_the_guns
+				}
+				add_tech_bonus = {
+					bonus = 0.2
+					uses = 2
+					category = ship_modules_tech
+				}
+				navy_experience = 10
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_a_surface_fleet
+		icon = GFX_goal_generic_navy_battleship
+		x = 1
+		y = 1
+		relative_position_id = PER_naval_effort
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		cost = 5
+
+		prerequisite = {focus = PER_naval_effort}
+		mutually_exclusive = {focus = PER_submarine_warfare}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.20
+				uses = 1
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.20
+				uses = 1
+				category = dd_tech
+			}
+			navy_experience = 35
+		}
+	}
+
+	focus = {
+
+		id = PER_dockyard_construction
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = -1
+		y = 1
+		relative_position_id = PER_naval_effort
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		cost = 10
+
+		prerequisite = {focus = PER_naval_effort}
+		prerequisite = {focus = PER_the_southern_industry}
+	}
+
+	focus = {
+
+		id = PER_a_minimum_wage
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 1
+		y = 1
+		relative_position_id = PER_raise_living_standarts
+
+		cost = 10
+
+		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY}
+
+		prerequisite = {focus = PER_raise_living_standarts}
+		prerequisite = {focus = PER_the_civilian_economy}
+
+		completion_reward = {
+			add_ideas = {
+				PER_minimum_wage
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_industrial_improvements
+		icon = GFX_goal_generic_consumer_goods
+		x = 2
+		y = 1
+		relative_position_id = PER_a_minimum_wage
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		available = {
+			has_war = no
+		}
+
+		cost = 10
+
+		prerequisite = {focus = PER_a_minimum_wage}
+		prerequisite = {focus = PER_the_tehran_university}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = PER_outdated_economy_1
+				}
+				remove_ideas = {
+					PER_outdated_economy_1
+				}
+			}
+			else = {
+				remove_ideas = {
+					PER_outdated_economy_2
+				}
+			}
+		}
+	}
+
+	focus = {
+
+		id = PER_northwestern_industrial_district
+		icon = GFX_focus_generic_industry_3
+		x = 1
+		y = 1
+		relative_position_id = PER_the_civilian_economy
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+
+		available = {
+			419 = {
+				is_owned_and_controlled_by = PER
+			}
+			420 = {
+				is_owned_and_controlled_by = PER
+			}
+		}
+
+		cost = 10
+
+		prerequisite = {focus = PER_the_civilian_economy}
+	}
+
+	focus = {
+
+		id = PER_azerbaijani_wall
+		icon = GFX_goal_generic_construct_military
+		x = 1
+		y = 1
+		relative_position_id = PER_defense_of_the_kingdom
+
+		available = {
+			419 = {
+				is_owned_and_controlled_by = PER
+			}
+			420 = {
+				is_owned_and_controlled_by = PER
+			}
+		}
+
+		cost = 10
+
+		prerequisite = {focus = PER_defense_of_the_kingdom}
+
+		completion_reward = {
+			419 = {
+				add_building_construction = {
+					type = bunker
+					province = 1636
+					level = 3
+				}
+				add_building_construction = {
+					type = bunker
+					province = 4755
+					level = 3
+				}
+				add_building_construction = {
+					type = bunker
+					province = 4825
+					level = 3
+				}
+			}
+			420 = {
+				add_building_construction = {
+					type = bunker
+					province = 10454
+					level = 3
+				}
+				add_building_construction = {
+					type = bunker
+					province = 4901
+					level = 3
+				}
+			}
+		}
+	}
 }

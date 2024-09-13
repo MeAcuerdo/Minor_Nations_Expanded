@@ -1,24 +1,19 @@
 on_actions = {
     on_startup = {
         effect = {
+            PER = {
+                set_country_flag = impending_invasion
+                activate_mission = PER_invasion_threat
+            }
+            PER = {
+                country_event = {
+                    id = PER_anglosoviet.1
+                    days = 45
+                }
+            }
             if = {
                 limit = {
                     is_historical_focus_on = yes
-                }
-                PER = {
-                    set_country_flag = impending_invasion
-                    activate_mission = PER_invasion_threat
-                }
-                PER = {
-                    country_event = {
-                        id = PER_anglosoviet.1
-                        days = 45
-                    }
-                }
-                PER = {
-                    set_variable = {
-                        no_invasion = 0
-                    }
                 }
             }
             else = {

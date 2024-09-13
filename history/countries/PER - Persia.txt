@@ -120,7 +120,11 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 100
+	neutrality = 90.33
+	fascism = 9.67
+}
+add_ideas = {
+	PER_outdated_economy_1
 }
 
 # His son, who came to power 41
